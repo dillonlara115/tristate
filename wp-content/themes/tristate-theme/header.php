@@ -13,6 +13,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Coustard' rel='stylesheet' type='text/css'>
 
 <?php wp_head(); ?>
 </head>
@@ -25,7 +28,7 @@
 		<div class="navigation-wrapper">
 			<div class="logo">
 				<!-- <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1> -->
-				<img src="<?php bloginfo('url'); ?>/wp-content/uploads/5th_annual_logo.png" />
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/5th_annual_logo.png" /></a>
 			</div><!-- .site-branding -->
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', 'tristate-theme' ); ?></button>
 			<nav id="site-navigation" role="navigation">
