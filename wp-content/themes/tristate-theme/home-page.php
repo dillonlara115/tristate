@@ -25,6 +25,52 @@ get_header(); ?>
   </div>
 </div>
 
+  <ul class="bullets">
+  <li class="bullet">
+    <div class="bullet-icon bullet-icon-1">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" alt="">
+    </div>
+    <div class="bullet-content">
+      <h2>Tradeshow</h2>
+      <strong>Premier Tradeshow</strong>  
+      <ul>
+        <li>New! Expanded Tradeshow. Two exhibits halls with over 14,000 square feet of display space.</li>
+        <li>Find the latest advancements in materials and sign technology.  </li>
+        <li>Meet with the leading suppliers in the sign industry.</li>
+      </ul>
+      </div>
+  </li>  
+  <li class="bullet">
+    <div class="bullet-icon bullet-icon-2">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3.png" alt="">
+    </div>
+    <div class="bullet-content">
+      <h2>Educational Seminars</h2>
+      <strong>Premier Educational Seminars</strong>      
+      <ul>
+        <li>Powerful presentations covering relevant topics</li>
+        <li>Learn from industry experts</li>
+        <li>Find out how to be successful in today’s challenging business.</li>
+      </ul>
+      <a href="#">learn more</a>
+    </div>
+  </li>
+  <li class="bullet">
+    <div class="bullet-icon bullet-icon-3">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_4.png" alt="">
+    </div>
+    <div class="bullet-content">
+      <h2>Networking</h2>
+      <strong>Premier Educational Seminars</strong>
+      <p>Tradeshow, Seminars, Social and Recreational Activities.</p>
+      <ul>
+        <li>Meet and talk with the suppliers and sign company attendees.</li>
+        <li> Learn from others how they pursue new opportunities and use best </li>
+      </ul>
+    </div>
+  </li> 
+</ul>
+
 	</div><!-- #primary -->
 
 

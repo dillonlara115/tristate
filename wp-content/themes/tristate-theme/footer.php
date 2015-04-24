@@ -11,7 +11,7 @@
 	</div><!-- #content -->
 <footer class="footer" role="contentinfo">
   <div class="footer-logo">
-    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
+    <img src="<?php bloginfo('url'); ?>/wp-content/uploads/5th_annual_logo.png" />
   </div>
   <div class="footer-links">
     <ul>
@@ -35,7 +35,7 @@
 
   <hr>
 
-  <p>Disclaimer area lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, nostrum repudiandae saepe.</p>
+  <p>&#169; <?php echo date('Y'); ?> Tri-State Sign Expo. All Rights Reserved. Website Designed by <a href="http://ventamarketing.com/" rel="designer">Venta Marketing</a></p>
 </footer>
 
 </div><!-- #page -->
