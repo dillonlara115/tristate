@@ -16,20 +16,14 @@
   <div class="footer-links">
     <ul>
       <li><h3>Content</h3></li>
-      <li><a href="javascript:void(0)">About</a></li>
-      <li><a href="javascript:void(0)">Contact</a></li>
-      <li><a href="javascript:void(0)">Products</a></li>
+      <li><?php wp_nav_menu( array('menu' => 'footer menu' )); ?>
+</li>
     </ul>
     <ul>
       <li><h3>Follow Us</h3></li>
       <li><a href="https://www.facebook.com/tristatesignexpo" target="_blank">Facebook</a></li>
       <li><a href="https://twitter.com/tristatesign" target="_blank">Twitter</a></li>
       <li><a href="https://www.linkedin.com/company/tri-state-sign-association?trk=biz-companies-cym" target="_blank">Linkedin</a></li>
-    </ul>
-    <ul>
-      <li><h3>Legal</h3></li>
-      <li><a href="javascript:void(0)">Terms and Conditions</a></li>
-      <li><a href="javascript:void(0)">Privacy Policy</a></li>
     </ul>
   </div>
   
@@ -39,7 +33,8 @@
 </footer>
 
 </div><!-- #page -->
-
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.sidr.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/custom.js"></script>
 <?php wp_footer(); ?>
 
 </body>

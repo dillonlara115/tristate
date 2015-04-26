@@ -4,7 +4,7 @@ header.site-header {
   $base-border-radius: 3px !default;
   $action-color: #477DCA !default;
   $dark-gray: #333 !default;
-  $large-screen: em(860) !default;
+  $large-screen: em(768) !default;
   $navigation-padding: 1em;
   $navigation-background: $dark-gray;
   $navigation-color: transparentize(white, 0.3);
@@ -25,7 +25,9 @@ header.site-header {
   min-height: $navigation-height;
   width: 100%;
   z-index: 999;
-
+    @media (max-width:48em) {
+      max-height: 70px;
+    }
   .navigation-wrapper {
     @include clearfix;
     @include outer-container;
@@ -38,10 +40,15 @@ header.site-header {
     max-height: $navigation-height;
     padding-left: $navigation-padding;
     padding-right: 2em;
-
+      @media (max-width:48em) {
+        max-height: 70px;
+      }
     img {
       max-height: $navigation-height;
       padding: 0.8em 0;
+      @media (max-width:48em) {
+        max-height: 70px;
+      }
     }
   }
 
@@ -75,7 +82,9 @@ header.site-header {
     float: none;
     min-height: $navigation-height;
     z-index: 9999999;
-
+      @media (max-width:48em) {
+        max-height: 70px;
+      }
     @include media ($horizontal-bar-mode) {
       float: left;
     }
@@ -109,7 +118,7 @@ header.site-header {
     display: block;
     line-height: $navigation-height;
     overflow: hidden;
-    padding-right: 0.8em;
+    padding-right: 1em;
     text-align: right;
     width: 100%;
     z-index: 9999;
@@ -260,9 +269,48 @@ header.site-header {
     }
   }
 }
+.desktop-nav {
+  @media (max-width: 48.9em) {
+    display: none!important;
+  }
+}
+#simple-menu {
+  text-decoration: none;
+  font-size: 4em;
+  float: right;
+  padding: 0em 0.2em;
+  @media (min-width: 48em) {
+    display: none;
+  }
+}
+.sidr {
+  @media (min-width: 48em) {
+    display: none!important;
+  }
+}
+
+header.site-header li.menu-item-has-children > .sub-menu, header.site-header li.menu-item-has-children > .sub-menu {
+  @media (max-width: 48em) {
+    display: block;
+  }
+  
+}
+
+.sidr ul li:hover>a, .sidr ul li:hover>span, .sidr ul li.active>a, .sidr ul li.active>span, .sidr ul li.sidr-class-active>a, .sidr ul li.sidr-class-active>span {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.sidr ul li ul li:hover, .sidr ul li ul li.active, .sidr ul li ul li.sidr-class-active {
+  line-height: inherit;
+  border-top: inherit;
+}
+
 .container {
   max-width: 1000px;
   margin: 1em auto;
+  padding: 1em;
 }
 
  //H1-H6
@@ -298,7 +346,7 @@ h1, h2, h3, h4, h5, h6 {
   $grid-item-big-columns: 6;
   $grid-item-color: white;
   $grid-item-height: 20em;
-  $event-grid-item-height: auto;
+  $event-grid-item-height: 30em;
 
   @include clearfix;
     
@@ -332,7 +380,7 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
   .event-grid-item {
-    height: $event-grid-item-height;
+    min-height: $event-grid-item-height;
     background: #cbcbcb!important;
     padding: 1em!important;
   }
@@ -385,6 +433,88 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+//schedules page grid
+@mixin grid-item-columns($columns) {
+  width: (100% / 12) * $columns;
+}
+
+.grid-items-lines {
+  $base-background-color: white !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $medium-screen: em(640) !default;
+  $large-screen: em(860) !default;
+  $base-font-color: $dark-gray !default;
+  $grid-items-background: $base-background-color;
+  $grid-item-background: $base-background-color;
+  $grid-item-border: 1px solid transparentize($base-font-color, 0.8); 
+  $grid-item-columns: 6;
+  $grid-item-big-columns: 8;
+  $grid-item-color: $base-font-color;
+  $grid-item-height: 20em;
+
+  @include clearfix;
+  position: relative;
+    
+  .grid-item {
+    @include transition (all 0.2s ease-in-out);
+    background: $grid-item-background;
+    border-bottom: $grid-item-border;
+    border-right: $grid-item-border;
+    cursor: pointer;
+    float: left;
+    height: $grid-item-height;
+    overflow: hidden;
+    outline: none;
+    padding: 2em;
+    text-decoration: none;
+    width: 100%;
+
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-columns);
+    }
+
+    &:focus,
+    &:hover {
+      background: transparentize($grid-item-color, 0.95);
+    }
+  }
+
+
+
+  .grid-item h1 {
+      color: $grid-item-color;
+      font-size: 1.3em;
+      margin-bottom: 0.4em;
+    }
+
+  .grid-item p {
+      color: transparentize($grid-item-color, 0.4);
+      line-height: 1.5em;
+      
+      @include media($medium-screen) {
+        max-width: 70%;
+      }
+    }
+
+  // this, below, might not be the most beautiful solution but it removes the outer borders by using the background color.
+  .bottom-cover {
+    background: $grid-items-background;
+    bottom: 0px;
+    height: 3px;
+    position: absolute;
+    width: 100%;
+  }
+
+  .right-cover {
+    background: $grid-items-background;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    width: 4px;
+  }
+}
+
 
 
 
@@ -406,8 +536,12 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 
   .bullet {
-    @include flex-basis(20em);
+    @include flex-basis(18em);
     @include flex-grow(1);
+    .fa {
+      font-size: 1.7em;
+      text-align: center;
+    } 
   }
 
   .bullet-icon {
@@ -489,12 +623,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: $base-spacing;
 
     @include media($medium-screen) {
-      @include shift(3);
+      @include shift(4);
     }
   }
 
   ul {
-    margin-bottom: $base-spacing * 2;
     padding: 0;
 
     @include media($medium-screen) {
@@ -696,4 +829,104 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+
+//seminars
+.cards {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+}
+
+.card {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $base-link-color: $action-color !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: lighten($card-border-color, 10%);
+  $card-header-background: $card-background;
+  $card-hover-background: lighten($card-background, 5%);
+  $card-image-background: #DBD199;
+  $card-image-hover-background: lighten($card-image-background, 5%);
+  $card-margin: 1em;
+
+  @include flex-basis(15em);
+  @include flex-grow(1);
+  @include transition (all 0.2s ease-in-out);
+  background-color: $card-background;
+  border-radius: $base-border-radius;
+  border: $card-border;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  cursor: pointer;
+  margin: 0 $card-margin $base-spacing $card-margin;
+  position: relative;
+
+  .card-image {
+    overflow: hidden;
+    max-height: 150px;
+
+    img {
+      @include transition (all 0.2s ease-in-out);
+      background: $card-image-background;
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      width: 100%;
+    }
+  }
+
+  .card-header {
+    @include transition (all 0.2s ease-in-out);
+    background-color: $card-header-background;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+  }
+
+  .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
+
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+  }
+  
+  &:focus,
+  &:hover {
+    background-color: $card-hover-background;
+    
+    .card-image img {
+      background: $card-image-hover-background;
+    }
+  
+    .card-header {
+      background-color: $card-hover-background;
+    }
+  }
+
+  &:active {
+    background-color: $card-background;
+
+    .card-header {
+      background-color: $card-background;
+    }
+  }
+}
+
+
+
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
 

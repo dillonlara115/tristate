@@ -50,7 +50,7 @@ get_header(); ?>
   <ul class="bullets">
   <li class="bullet">
     <div class="bullet-icon bullet-icon-1">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" alt="">
+      <i class="fa fa-2x fa-star"></i>    
     </div>
     <div class="bullet-content">
       <h2>Tradeshow</h2>
@@ -64,7 +64,7 @@ get_header(); ?>
   </li>  
   <li class="bullet">
     <div class="bullet-icon bullet-icon-2">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3.png" alt="">
+      <i class="fa fa-2x fa-graduation-cap"></i>
     </div>
     <div class="bullet-content">
       <h2>Educational Seminars</h2>
@@ -74,12 +74,12 @@ get_header(); ?>
         <li>Learn from industry experts</li>
         <li>Find out how to be successful in today’s challenging business.</li>
       </ul>
-      <a href="#">learn more</a>
+      <a href="index.php?page_id=9">learn more</a>
     </div>
   </li>
   <li class="bullet">
     <div class="bullet-icon bullet-icon-3">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_4.png" alt="">
+      <i class="fa fa-2x fa-users"></i>
     </div>
     <div class="bullet-content">
       <h2>Networking</h2>

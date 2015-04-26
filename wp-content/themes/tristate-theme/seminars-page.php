@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying all pages.
- *Template Name: Event page template
+ *Template Name: Seminars page template
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -18,12 +18,14 @@ get_header(); ?>
     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
   </header><!-- .entry-header -->
   <?php the_content(); ?>
-  <div class="grid-items">
-  <?php 
+
+<div class="cards">
+    <?php 
 $args = array( 'post_type' => 'event', 'posts_per_page' => 10 );
 $loop = new WP_Query( $args );
 while ( $loop->have_posts() ) : $loop->the_post(); ?>
-    <div class="grid-item event-grid-item">
+  <div class="card">
+    <div class="card-image">
       <?php 
 
       $image = get_field('image');
@@ -33,14 +35,18 @@ while ( $loop->have_posts() ) : $loop->the_post(); ?>
         <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
       <?php endif; ?>
-
-        <h2><?php the_title(); ?></h2>
-        <div class="entry-content">
+    </div>
+    <div class="card-header">
+      <?php the_field('seminar_title'); ?>
+    </div>
+    <div class="card-copy">
+      <p><strong>Speaker:</strong> <?php the_field('seminar_speaker'); ?></p>
           <?php the_field('seminar_description'); ?><br>
           <strong>Time: </strong><?php the_field('time_of_seminar'); ?>
-        </div>
+    </div>
   </div>
   <?php endwhile; ?>
+
 </div>
 
 
