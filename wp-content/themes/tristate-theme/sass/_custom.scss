@@ -136,6 +136,9 @@ header.site-header {
       display: inline-block;
       font-weight: 400;
       text-decoration: none;
+      @media (max-width: 48em) {
+        display: block;
+      }
 
       @include media ($horizontal-bar-mode) {
         padding-right: 1em;
@@ -531,7 +534,7 @@ h1, h2, h3, h4, h5, h6 {
   @include display(flex);
   @include flex-wrap(wrap);
   margin-bottom: $base-line-height;
-  margin: 1em;
+  margin: 1em 0;
   overflow: auto;
   padding: 0;
 
@@ -862,7 +865,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: $base-border-radius;
   border: $card-border;
   box-shadow: 0 2px 4px darken($base-background-color, 10%);
-  cursor: pointer;
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
 
@@ -929,4 +931,130 @@ h1, h2, h3, h4, h5, h6 {
 .pull-right {
   float: right;
 }
+
+.blank-td {
+  @media (max-width: 48em) {
+    display: none!important;
+  }
+}
+.row-group {
+  td {
+    border: none;
+  }
+}
+//registration
+.register-page {
+  ul {
+    @extend %default-ul;
+    margin-bottom: 1em;
+    display: inline-block;
+  }
+}
+.registration-table-container {
+  font-size: .75em;
+  margin: -1.3em;
+  h3 {
+    color: #ccc;
+  }
+  input[type="text"], input[type="number"], select {
+    display: inline-block;
+    width: 90%;
+  }
+  td {
+    padding: .75em;
+    &:before {
+        @media (max-width: 48em) {
+          content: attr(data-th);
+          font-weight: bold;
+          display: inline-block;
+          padding-right: 5px;
+        }
+        display: none;
+      }
+  }
+  strong {
+    display: inline-block;
+    margin: 1em 0;
+  }
+  .ticket-table {
+    td {
+      @media (max-width: 48em) {
+        width: 100%;
+        float: left;
+        clear: both;
+        display: block;
+      }
+      &:before {
+        display: block; 
+      }
+      input[type="number"] {
+        width: 50px;
+        margin: 0 .5em .75em;
+      }
+      span {
+        width: 150px;
+        display: inline-block;
+        @media (max-width: 48em) {
+          width: auto;
+        }
+      }
+      b {
+        display: block;
+      }
+    }
+    th {
+      @media (max-width: 48em) {
+        display: none;
+      }
+    }
+    .table-number-th {
+      text-align: center;
+      padding-right: 3em;
+    }
+  }
+  .grand-total {
+    text-align:right;
+    input {
+      width: 100px;
+      display: inline-block;
+      margin-left: 1em;
+    }
+  }
+  .attendees-table-list {
+    border-bottom: 1px solid;
+    th {
+      @media (max-width: 48em) {
+        display: none;
+      }
+    }
+    .attendees-name-header {
+      border: 0;
+      @media (min-width: 48em) {
+        width:252px; 
+      }
+    }
+    td {
+      border-style: solid;
+      border-width: 1px;
+      text-align:center;
+      @media (max-width: 48em) {
+        display: block;
+        text-align: left;
+        border-top: 0;
+        border-bottom: 0;
+      }
+      
+      &:first-child {
+        @media (max-width: 48em){
+          border-top: 1px solid;
+        }
+        &:before {
+          display: block;
+        } 
+      }
+    }
+  }
+
+}
+
 

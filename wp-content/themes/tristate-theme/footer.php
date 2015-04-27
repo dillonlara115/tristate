@@ -34,7 +34,7 @@
 
 </div><!-- #page -->
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.sidr.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/custom.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/min/new-custom.js"></script>
 <?php wp_footer(); ?>
 
 </body>

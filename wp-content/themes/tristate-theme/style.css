@@ -682,6 +682,10 @@ ul, ol {
   list-style-type: none;
   margin: 0;
   padding: 0; }
+  .register-page ul {
+    list-style-type: disc;
+    margin-bottom: 0.75em;
+    padding-left: 1.5em; }
 
 dl {
   margin-bottom: 0.75em; }
@@ -812,6 +816,9 @@ header.site-header {
       display: inline-block;
       font-weight: 400;
       text-decoration: none; }
+      @media (max-width: 48em) {
+        header.site-header ul li.menu-item a {
+          display: block; } }
       @media screen and (min-width: 48em) {
         header.site-header ul li.menu-item a {
           padding-right: 1em; } }
@@ -1090,7 +1097,7 @@ h1, h2, h3, h4, h5, h6 {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-bottom: 1.5;
-  margin: 1em;
+  margin: 1em 0;
   overflow: auto;
   padding: 0; }
   .bullets .bullet {
@@ -1365,7 +1372,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
   border: 1px solid #ddd;
   box-shadow: 0 2px 4px #e6e6e6;
-  cursor: pointer;
   margin: 0 1em 1.5em 1em;
   position: relative; }
   .card .card-image {
@@ -1411,3 +1417,92 @@ h1, h2, h3, h4, h5, h6 {
 
 .pull-right {
   float: right; }
+
+@media (max-width: 48em) {
+  .blank-td {
+    display: none !important; } }
+
+.row-group td {
+  border: none; }
+
+.register-page ul {
+  margin-bottom: 1em;
+  display: inline-block; }
+
+.registration-table-container {
+  font-size: .75em;
+  margin: -1.3em; }
+  .registration-table-container h3 {
+    color: #ccc; }
+  .registration-table-container input[type="text"], .registration-table-container input[type="number"], .registration-table-container select {
+    display: inline-block;
+    width: 90%; }
+  .registration-table-container td {
+    padding: .75em; }
+    .registration-table-container td:before {
+      display: none; }
+      @media (max-width: 48em) {
+        .registration-table-container td:before {
+          content: attr(data-th);
+          font-weight: bold;
+          display: inline-block;
+          padding-right: 5px; } }
+  .registration-table-container strong {
+    display: inline-block;
+    margin: 1em 0; }
+  @media (max-width: 48em) {
+    .registration-table-container .ticket-table td {
+      width: 100%;
+      float: left;
+      clear: both;
+      display: block; } }
+  .registration-table-container .ticket-table td:before {
+    display: block; }
+  .registration-table-container .ticket-table td input[type="number"] {
+    width: 50px;
+    margin: 0 .5em .75em; }
+  .registration-table-container .ticket-table td span {
+    width: 150px;
+    display: inline-block; }
+    @media (max-width: 48em) {
+      .registration-table-container .ticket-table td span {
+        width: auto; } }
+  .registration-table-container .ticket-table td b {
+    display: block; }
+  @media (max-width: 48em) {
+    .registration-table-container .ticket-table th {
+      display: none; } }
+  .registration-table-container .ticket-table .table-number-th {
+    text-align: center;
+    padding-right: 3em; }
+  .registration-table-container .grand-total {
+    text-align: right; }
+    .registration-table-container .grand-total input {
+      width: 100px;
+      display: inline-block;
+      margin-left: 1em; }
+  .registration-table-container .attendees-table-list {
+    border-bottom: 1px solid; }
+    @media (max-width: 48em) {
+      .registration-table-container .attendees-table-list th {
+        display: none; } }
+    .registration-table-container .attendees-table-list .attendees-name-header {
+      border: 0; }
+      @media (min-width: 48em) {
+        .registration-table-container .attendees-table-list .attendees-name-header {
+          width: 252px; } }
+    .registration-table-container .attendees-table-list td {
+      border-style: solid;
+      border-width: 1px;
+      text-align: center; }
+      @media (max-width: 48em) {
+        .registration-table-container .attendees-table-list td {
+          display: block;
+          text-align: left;
+          border-top: 0;
+          border-bottom: 0; } }
+      @media (max-width: 48em) {
+        .registration-table-container .attendees-table-list td:first-child {
+          border-top: 1px solid; } }
+      .registration-table-container .attendees-table-list td:first-child:before {
+        display: block; }

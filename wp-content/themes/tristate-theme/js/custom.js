@@ -1,1 +1,15 @@
-jQuery(document).ready(function(e){jQuery("#simple-menu").sidr({side:"right"})});jQuery(".page").on("click",function(e){$.sidr("close")});jQuery(window).on("resize",function(e){if($("body").hasClass("sidr-open")&&$(window).width()>=768){$.sidr("close")}})
+jQuery(document).ready(function() {
+    jQuery("#simple-menu").sidr({
+        side: "right"
+    });
+});
+
+jQuery(".page").on("click", function() {
+    $.sidr("close");
+});
+
+jQuery(window).on("resize", function() {
+    if ($("body").hasClass("sidr-open") && $(window).width() >= 768) {
+        $.sidr("close");
+    }
+});

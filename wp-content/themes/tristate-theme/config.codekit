@@ -197,6 +197,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/js\/min\/custom-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/min\/custom-min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/custom-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/js\/min\/navigation-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -217,6 +228,19 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
+	"\/js\/new-custom.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/new-custom.coffee",
+		"minifyOutput": 0,
+		"outputAbbreviatedPath": "\/js\/min\/new-custom.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 0
 		},
 	"\/js\/skip-link-focus-fix.js": {
@@ -266,6 +290,15 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/README.md",
 		"outputAbbreviatedPath": "\/README.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/register-page.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/register-page.php",
+		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
@@ -2602,7 +2635,7 @@
 	},
 "hooks": [
 	],
-"lastSavedByUser": "dillon Lara",
+"lastSavedByUser": "Dillon Lara",
 "manualImportLinks": {
 	},
 "projectAttributes": {
