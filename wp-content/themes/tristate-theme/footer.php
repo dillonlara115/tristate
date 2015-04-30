@@ -11,7 +11,7 @@
 	</div><!-- #content -->
 <footer class="footer" role="contentinfo">
   <div class="footer-logo">
-    <img src="<?php bloginfo('url'); ?>/wp-content/uploads/foot_logo.jpg" />
+    <img src="<?php bloginfo('url'); ?>/wp-content/uploads/logo2.png" />
   </div>
   <div class="footer-links">
     <ul>

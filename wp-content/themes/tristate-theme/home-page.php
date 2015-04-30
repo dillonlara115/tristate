@@ -54,7 +54,7 @@ get_header(); ?>
         <li>Learn from industry experts</li>
         <li>Find out how to be successful in today’s challenging business.</li>
       </ul>
-      <a href="index.php?page_id=9" class="link" data-hover="Learn more">learn more</a>
+      <a href="index.php?page_id=40" class="link" data-hover="Learn more">learn more</a>
     </div>
   </li>
   <li class="bullet">

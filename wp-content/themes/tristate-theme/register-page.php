@@ -32,6 +32,26 @@ get_header(); ?>
           <tr>
             <td colspan="7" style="text-align:center;"><div style="color:#ED1C1D;"><b>Enter the Number of Attendees From Your Company</b></div><b>(Children of Registered Attendees under 12 are not required to register)</b></td>
           </tr>
+          <tr>
+            <td colspan="2"> <b>COMPANY INFORMATION</b></td>
+            <td colspan="1">Check One</td>
+            <td colspan="4"><strong><input name="TSSA" type="checkbox" value="TSSA MEMBER">Tri-State Sign Association Member </strong>&nbsp;&nbsp;<strong><input name="NonMember" type="checkbox" value="Non-Member">Non-Member</strong></td>
+          </tr>
+          <tr class="row-group">
+            <td colspan="4"><b>Name:</b><input type="text" name="Primary_Contact" placeholder="Primary Contact"></td>
+            <td colspan="3"><b>Company Name:</b> <input type="text" name="Company"></td>
+          </tr>
+          <tr class="row-group">
+            <td colspan="4"><b>Address:</b> <input type="text" name="Address"></td>
+            <td><b>City:</b> <input type="text" name="City" size="15" ></td>
+            <td><b>State:</b> <input type="text" name="State" size="10" ></td>
+            <td><b>Zip:</b> <input type="text" name="Zip" size="10" ></td>
+          </tr>
+          <tr class="row-group">
+            <td colspan="4"><b>E-mail:</b> <input type="text" name="Email"></td>
+            <td colspan="2"><b>Phone:</b> <input type="text" name="Phone" size="15" ></td>
+            <td colspan="1"><b>Fax:</b> <input type="text" name="Fax" size="15" ></td>
+          </tr>
           
           <?php if (new DateTime() < new DateTime("2015-06-15 16:00:00")) { ?> <!-- only show early bird registration if before June 15 -->
             <tr>
@@ -87,26 +107,7 @@ get_header(); ?>
           <tr>
             <td colspan="7" class="grand-total"><strong>GRAND TOTAL AMOUNT DUE: </strong><INPUT TYPE=TEXT NAME=chargetotal SIZE=10 onFocus="this.form.elements[0].focus()"></td>
           </tr>
-          <tr>
-            <td colspan="2"> <b>COMPANY INFORMATION</b></td>
-            <td colspan="1">Check One</td>
-            <td colspan="4"><strong><input name="TSSA" type="checkbox" value="TSSA MEMBER">Tri-State Sign Association Member </strong>&nbsp;&nbsp;<strong><input name="NonMember" type="checkbox" value="Non-Member">Non-Member</strong></td>
-          </tr>
-          <tr class="row-group">
-            <td colspan="4"><b>Name:</b><input type="text" name="Primary_Contact" placeholder="Primary Contact"></td>
-            <td colspan="3"><b>Company Name:</b> <input type="text" name="Company"></td>
-          </tr>
-          <tr class="row-group">
-            <td colspan="4"><b>Address:</b> <input type="text" name="Address"></td>
-            <td><b>City:</b> <input type="text" name="City" size="15" ></td>
-            <td><b>State:</b> <input type="text" name="State" size="10" ></td>
-            <td><b>Zip:</b> <input type="text" name="Zip" size="10" ></td>
-          </tr>
-          <tr class="row-group">
-            <td colspan="4"><b>E-mail:</b> <input type="text" name="Email"></td>
-            <td colspan="2"><b>Phone:</b> <input type="text" name="Phone" size="15" ></td>
-            <td colspan="1"><b>Fax:</b> <input type="text" name="Fax" size="15" ></td>
-          </tr>
+
         </table>
         <table class="attendees-table-list" >
           <tr style="background: #525254;color:#fff;">

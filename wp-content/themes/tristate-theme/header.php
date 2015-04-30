@@ -33,7 +33,7 @@
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/5th_annual_logo.png" /></a>
 			</div><!-- .site-branding -->
 			<nav id="site-navigation" role="navigation">
-				
+				<span class="blip"></span>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'navigation-menu show desktop-nav' ) ); ?>
 			<a id="simple-menu" href="#sidr">&#8801;</a>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'navigation-menu show', 'container_id' => 'sidr'  ) ); ?>
