@@ -43,5 +43,25 @@
 
 		</div>
 	</header><!-- #masthead -->
+	<?php if( is_front_page()){ ?>
+	
+	<div class="cover-image">
+		<div class="container">
+		    <div class="cta-item">
+				<img src="<?php bloginfo('url'); ?>/wp-content/uploads/logo2.png" />
+				<ul>
+					<li>blurb here</li>
+					<li>blurb here</li>
+					<li>blurb here</li>
+				</ul>
+		      <a href="" data-hover="Register" class="link">Register</a>
+		    </div>
+		</div>
+	  
 
+
+	  
+	</div>
+
+	<?php } ?>
 	<div id="content" class="site-content  container">

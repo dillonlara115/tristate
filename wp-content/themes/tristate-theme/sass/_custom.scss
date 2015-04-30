@@ -3,7 +3,7 @@ header.site-header {
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
   $action-color: #477DCA !default;
-  $dark-gray: #333 !default;
+  $dark-gray: #000 !default;
   $large-screen: em(768) !default;
   $navigation-padding: 1em;
   $navigation-background: $dark-gray;
@@ -20,7 +20,7 @@ header.site-header {
   $navigation-submenu-width: 12em;
   $horizontal-bar-mode: $large-screen;
 
-  background-color: $navigation-background;
+  background-color: #000;
   border-bottom: 1px solid darken($navigation-background, 10);
   min-height: $navigation-height;
   width: 100%;
@@ -43,8 +43,11 @@ header.site-header {
       @media (max-width:48em) {
         max-height: 70px;
       }
+    a {
+      display: block;
+    }
     img {
-      max-height: $navigation-height;
+      max-height: $navigation-height + 60px;
       padding: 0.8em 0;
       @media (max-width:48em) {
         max-height: 70px;
@@ -176,12 +179,6 @@ header.site-header {
     > a {
       padding-right: 0.6em;
     }
-
-    > a:after {
-      @include position(absolute, auto -0.4em auto auto);
-      content: '\25BE';
-      color: $navigation-color;
-    }
   }
 
   li.menu-item-has-children {
@@ -198,13 +195,6 @@ header.site-header {
 
       @include media($large-screen) {
         margin-right: $navigation-submenu-padding;
-      }
-
-      &:after {
-        content: '›';
-        font-size: 1.2em;
-        position: absolute;
-        right: $navigation-submenu-padding / 2;
       }
     }
 
@@ -324,117 +314,86 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
 }
 //homepage cta 
+.cover-image .container {
+  padding: 0;
+  margin: 0 auto;
+  height: 100%;
+}
+.cta-item {
+  text-align: center;
+  background: rgba(102, 102, 102, 0.94);
+  padding: 1em;
+  border: 1px solid;
+  width: auto;
+  float: right;
+  height: 100%;
+  img {
+    display: block;
+    max-width: 300px;
+    padding-bottom: 1em;
+  }
+  ul li {
+    margin-bottom: .75em;
+    color: #eee;
+  }
 
-@mixin grid-item-columns($columns) {
-  width: (100% / 12) * $columns;
 }
 
-.grid-items {
-  $action-color: #477DCA !default;
-  $base-background-color: white !default;
-  $medium-screen: em(640) !default;
-  $large-screen: em(860) !default;
-  $grid-items-background: $base-background-color;
-  $grid-item-background: desaturate($action-color, 30%);
-  $grid-item-colors: 
-    desaturate($action-color, 30%), 
-    #3581A5, 
-    #5FBEBE,
-    #98C79A,
-    #A7A891, 
-    #BDCC97,
-    #979EA0;
-  $grid-item-border-size: 9px;
-  $grid-item-columns: 6;
-  $grid-item-big-columns: 6;
-  $grid-item-color: white;
-  $grid-item-height: 20em;
-  $event-grid-item-height: 30em;
-
-  @include clearfix;
-    
-  .grid-item {
-    @include transition (all 0.2s ease-in-out);
-    background: $grid-item-background;
-    border-bottom: $grid-item-border-size solid $grid-items-background;
-    border-left: ($grid-item-border-size / 2) solid $grid-items-background;
-    border-right: ($grid-item-border-size / 2) solid $grid-items-background;
-    border-top: 0;
-    //cursor: pointer;
-    float: left;
-    height: $grid-item-height;
-    overflow: hidden;
-    outline: none;
-    padding: 2em;
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
+.link {
+    line-height: 2em;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    perspective: 800px;
     position: relative;
-    @include media($large-screen) {
-      @include grid-item-columns($grid-item-columns);
-    }
+    display: inline-block;
+    padding: 3px 15px 0;
+    background: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    box-shadow: inset 0 3px #FFF;
+    @include transition(background .6s);
+    @include transform-style(preserve-3d);
+    @include transform-origin(0% 50%);
+    text-decoration: none;
 
-    @for $i from 1 through length($grid-item-colors) { // assign colors from $grid-item-colors list
-      &:nth-child(#{$i}) {
-        $background-from-list: nth($grid-item-colors, $i);
-        background-color: #1b2528;
-        padding: 0;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      color: #2f4351;
+      content: attr(data-hover);
+      @include transform(rotateX(270deg));
+      @include transition-property(transform);
+      @include transition-duration(.6s);
+      @include transform-origin(0 0);
+      pointer-events: none;
+    }
+    &:hover {
+      color: #ccc;
+      &:before {
+        @include transform(rotateX(10deg));
       }
     }
-  }
-  .event-grid-item {
-    min-height: $event-grid-item-height;
-    background: #cbcbcb!important;
-    padding: 1em!important;
-  }
-  .grid-item img {
-      display: block;
-      margin-bottom: 1em;
-      margin: auto;
-      max-width: 310px;
-    }
-
-  .grid-item h1 {
-      color: $grid-item-color;
-      font-size: 1.3em;
-      margin-bottom: 0.4em;
-    }
-  .grid-inner-item {
-    background: rgba(0, 0, 0, 0.69);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  .grid-item p {
-      line-height: 1.5em;
-      margin: auto;
-      color: transparentize($grid-item-color, 0.3);
-      
-      @include media($medium-screen) {
-        max-width: 70%;
-      }
-    }
-
-  .grid-item-big {
-    @include media($large-screen) {
-      @include grid-item-columns($grid-item-big-columns);
-    }
-    p {
-      @include media($medium-screen) {
-        max-width: 60%;
-      }  
-    }
-  }
-
-  .grid-item-image {
-    background: url("http://maxtestdomain.com/tristatesignexpo/wp-content/uploads/DownstreamCasinoPH2_02_ext-overall_night.jpg");
-    background-color: $grid-item-background;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
 }
+
+.cover-image {
+  background: url("http://maxtestdomain.com/tristatesignexpo/wp-content/uploads/DownstreamCasinoPH2_02_ext-overall_night.jpg");
+  background-color: #ccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 480px;
+  position: relative;
+  background-attachment: fixed;
+  padding: 1em;
+  background-size: cover;
+  background-position-y: -15em;
+}
+
 
 //schedules page grid
 @mixin grid-item-columns($columns) {
@@ -603,7 +562,7 @@ h1, h2, h3, h4, h5, h6 {
   $action-color: #252525 !default;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
-  $footer-background: #252525;
+  $footer-background: #000;
   $footer-color: #cbcbcb;
   $footer-link-color: transparentize($footer-color, 0.6);
   $footer-disclaimer-color: transparentize($footer-color, 0.6);

@@ -25,26 +25,6 @@ get_header(); ?>
     </div>
   </div> -->
 
-  <div class="grid-items">
-    <div class="grid-item grid-item-big">
-      <img src="<?php bloginfo('url'); ?>/wp-content/uploads/5th_annual_logo.png" />
-      <ul>
-        <li>blurb here</li>
-        <li>blurb here</li>
-        <li>blurb here</li>
-      </ul>
-    </div>
-    <div class="grid-item  grid-item-image">
-    <div class="grid-inner-item">
-      <img src="<?php bloginfo('url'); ?>/wp-content/uploads/logo_dsr_2011.png" alt="downstream casino">
-      <p>August 7-9 2014</p>
-      <p>The Downstream Casion Resort</p>
-      <p><a href="tel:8883967876"></a>888.396.7876</p>
-      <p><a href="http://downstreamcasino.com">downstreamcasino.com</a></p>
-    </div>
-
-    </div>
-  </div>
 
 
   <ul class="bullets">
@@ -74,7 +54,7 @@ get_header(); ?>
         <li>Learn from industry experts</li>
         <li>Find out how to be successful in today’s challenging business.</li>
       </ul>
-      <a href="index.php?page_id=9">learn more</a>
+      <a href="index.php?page_id=9" class="link" data-hover="Learn more">learn more</a>
     </div>
   </li>
   <li class="bullet">

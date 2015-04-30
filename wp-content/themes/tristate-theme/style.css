@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 Theme Name: tristate
 Theme URI: http://underscores.me/
@@ -719,7 +718,7 @@ tr, td, th {
   vertical-align: middle; }
 
 header.site-header {
-  background-color: #333;
+  background-color: #000;
   border-bottom: 1px solid #1a1a1a;
   min-height: 100px;
   width: 100%;
@@ -749,8 +748,10 @@ header.site-header {
     @media (max-width: 48em) {
       header.site-header .logo {
         max-height: 70px; } }
+    header.site-header .logo a {
+      display: block; }
     header.site-header .logo img {
-      max-height: 100px;
+      max-height: 160px;
       padding: 0.8em 0; }
       @media (max-width: 48em) {
         header.site-header .logo img {
@@ -838,14 +839,6 @@ header.site-header {
       margin-right: 1em; }
     header.site-header li.menu-item-has-children.menu-item > a {
       padding-right: 0.6em; }
-    header.site-header li.menu-item-has-children.menu-item > a:after {
-      position: absolute;
-      top: auto;
-      right: -0.4em;
-      bottom: auto;
-      left: auto;
-      content: '\25BE';
-      color: rgba(255, 255, 255, 0.7); }
   header.site-header li.menu-item-has-children {
     overflow: visible;
     padding-right: 0; }
@@ -857,11 +850,6 @@ header.site-header {
       @media screen and (min-width: 48em) {
         header.site-header li.menu-item-has-children > a {
           margin-right: 1em; } }
-      header.site-header li.menu-item-has-children > a:after {
-        content: '›';
-        font-size: 1.2em;
-        position: absolute;
-        right: 0.5em; }
     header.site-header li.menu-item-has-children:focus > .sub-menu, header.site-header li.menu-item-has-children:hover > .sub-menu {
       display: block; }
     @media screen and (min-width: 48em) {
@@ -947,90 +935,101 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 1px; }
 
-.grid-items::after {
-  clear: both;
-  content: "";
-  display: table; }
-.grid-items .grid-item {
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  background: #6b83a6;
-  border-bottom: 9px solid #fff;
-  border-left: 4.5px solid #fff;
-  border-right: 4.5px solid #fff;
-  border-top: 0;
-  float: left;
-  height: 20em;
-  overflow: hidden;
-  outline: none;
-  padding: 2em;
+.cover-image .container {
+  padding: 0;
+  margin: 0 auto;
+  height: 100%; }
+
+.cta-item {
   text-align: center;
-  text-decoration: none;
-  width: 100%;
-  position: relative; }
-  @media screen and (min-width: 53.75em) {
-    .grid-items .grid-item {
-      width: 50%; } }
-  .grid-items .grid-item:nth-child(1) {
-    background-color: #1b2528;
-    padding: 0; }
-  .grid-items .grid-item:nth-child(2) {
-    background-color: #1b2528;
-    padding: 0; }
-  .grid-items .grid-item:nth-child(3) {
-    background-color: #1b2528;
-    padding: 0; }
-  .grid-items .grid-item:nth-child(4) {
-    background-color: #1b2528;
-    padding: 0; }
-  .grid-items .grid-item:nth-child(5) {
-    background-color: #1b2528;
-    padding: 0; }
-  .grid-items .grid-item:nth-child(6) {
-    background-color: #1b2528;
-    padding: 0; }
-  .grid-items .grid-item:nth-child(7) {
-    background-color: #1b2528;
-    padding: 0; }
-.grid-items .event-grid-item {
-  min-height: 30em;
-  background: #cbcbcb !important;
-  padding: 1em !important; }
-.grid-items .grid-item img {
-  display: block;
-  margin-bottom: 1em;
-  margin: auto;
-  max-width: 310px; }
-.grid-items .grid-item h1 {
-  color: white;
-  font-size: 1.3em;
-  margin-bottom: 0.4em; }
-.grid-items .grid-inner-item {
-  background: rgba(0, 0, 0, 0.69);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0; }
-.grid-items .grid-item p {
-  line-height: 1.5em;
-  margin: auto;
-  color: rgba(255, 255, 255, 0.7); }
-  @media screen and (min-width: 40em) {
-    .grid-items .grid-item p {
-      max-width: 70%; } }
-@media screen and (min-width: 53.75em) {
-  .grid-items .grid-item-big {
-    width: 50%; } }
-@media screen and (min-width: 40em) {
-  .grid-items .grid-item-big p {
-    max-width: 60%; } }
-.grid-items .grid-item-image {
+  background: rgba(102, 102, 102, 0.94);
+  padding: 1em;
+  border: 1px solid;
+  width: auto;
+  float: right;
+  height: 100%; }
+  .cta-item img {
+    display: block;
+    max-width: 300px;
+    padding-bottom: 1em; }
+  .cta-item ul li {
+    margin-bottom: .75em;
+    color: #eee; }
+
+.link {
+  line-height: 2em;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  perspective: 800px;
+  position: relative;
+  display: inline-block;
+  padding: 3px 15px 0;
+  background: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  box-shadow: inset 0 3px #FFF;
+  -webkit-transition: background .6s;
+  -moz-transition: background .6s;
+  transition: background .6s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 0% 50%;
+  -moz-transform-origin: 0% 50%;
+  -ms-transform-origin: 0% 50%;
+  -o-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+  text-decoration: none; }
+  .link:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: #2f4351;
+    content: attr(data-hover);
+    -webkit-transform: rotateX(270deg);
+    -moz-transform: rotateX(270deg);
+    -ms-transform: rotateX(270deg);
+    -o-transform: rotateX(270deg);
+    transform: rotateX(270deg);
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: .6s;
+    -moz-transition-duration: .6s;
+    transition-duration: .6s;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+    pointer-events: none; }
+  .link:hover {
+    color: #ccc; }
+    .link:hover:before {
+      -webkit-transform: rotateX(10deg);
+      -moz-transform: rotateX(10deg);
+      -ms-transform: rotateX(10deg);
+      -o-transform: rotateX(10deg);
+      transform: rotateX(10deg); }
+
+.cover-image {
   background: url("http://maxtestdomain.com/tristatesignexpo/wp-content/uploads/DownstreamCasinoPH2_02_ext-overall_night.jpg");
-  background-color: #6b83a6;
-  background-position: top;
+  background-color: #ccc;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  width: 100%;
+  height: 480px;
+  position: relative;
+  background-attachment: fixed;
+  padding: 1em;
+  background-size: cover;
+  background-position-y: -15em; }
 
 .grid-items-lines {
   position: relative; }
@@ -1145,7 +1144,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%; }
 
 .footer {
-  background: #252525;
+  background: #000;
   padding: 3em 1.618em;
   width: 100%; }
   .footer .footer-logo {
