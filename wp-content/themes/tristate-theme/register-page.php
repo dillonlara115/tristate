@@ -18,8 +18,9 @@ get_header(); ?>
     <?php the_title( '<h1 class="endivy-title">', '</h1>' ); ?>
   </header><!-- .endivy-header -->
   <?php echo $post->post_content ?>
+  <a href="uploads/2014_AttendeeForm_NEW.pdf" target="_blank" class='link' data-hover="Download Attendee Registration Form (PDF)">Download Attendee Registration Form (PDF)</a>
   <div id="main" class="registration-table-container">
-    <a href="uploads/2014_AttendeeForm_NEW.pdf" target="_blank"><h5>Download Attendee Registration Form (PDF)</h5></a><br /><br />
+    <br /><br />
     <div style="align:auto">
       <form method="post">
         <type="hidden" input name="recipients" value="tristatesignexpo@gmail.com" />
@@ -48,33 +49,34 @@ get_header(); ?>
             <td><b>Zip:</b> <input type="text" name="Zip" size="10" ></td>
           </tr>
           <tr class="row-group">
-            <td colspan="4"><b>E-mail:</b> <input type="text" name="Email"></td>
-            <td colspan="2"><b>Phone:</b> <input type="text" name="Phone" size="15" ></td>
-            <td colspan="1"><b>Fax:</b> <input type="text" name="Fax" size="15" ></td>
+            <td colspan="4"><b>E-mail:</b> <input type="email" name="Email"></td>
+            <td colspan="2"><b>Phone:</b> <input type="tel" name="Phone" size="15" ></td>
+            <td colspan="1"><b>Fax:</b> <input type="tel" name="Fax" size="15" ></td>
           </tr>
           
-          <?php if (new DateTime() < new DateTime("2015-06-15 16:00:00")) { ?> <!-- only show early bird registration if before June 15 -->
-            <tr>
+          <?php if (new DateTime() < new DateTime("2015-06-15 00:00:00")) { ?>
+            <tr class="header-row">
               <th colspan="4">DISCOUNTED GENERAL REGISTRATION:<br /> (Prior to June 15)</th>
               <th colspan="3" class="table-number-th">Enter #</th>
             </tr>
             <tr>
                 <td colspan="4" class="blank-td"></td>
                 <td colspan="3" data-th="Number of Attendees: " >
-                <span>Member: @ $75.00</span> <input class="member-count" name="PROD_Memattendee_75.00" type="number" size="5" onChange="CalculateTotal(this.form)"> Attendees
-                <br/><span>Non-Member: @ $95.00</span> <input class="reg-count" name="PROD_attendee_95.00" type="number" size="5" onChange="CalculateTotal(this.form)"> Attendees
+                <span>Member: @ $75.00</span> <input class="member-count" name="PROD_Memattendee_75.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Attendees
+                <br/><span>Non-Member: @ $95.00</span> <input class="reg-count" name="PROD_attendee_95.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Attendees
                 </td>
             </tr>
           <?php } else { ?>
-            <tr>
+            <tr class="header-row">
               <th colspan="4">GENERAL REGISTRATION:<br /> (After June 15)</th>
               <th colspan="3" class="table-number-th">Enter #</th>
             </tr>
             <tr>
               <td colspan="4"class="blank-td"></td>
-              <td colspan="3" style="text-align:right;">Member: @ $95.00<br /><br />Non-Member: @ $115.00</td>
-              <td style="width:152px;text-align:center;"><input name="PROD_Memattendee1_95.00" type="number" size="5" onChange="CalculateTotal(this.form)"><br /><input name="PROD_attendee1_115.00" type="text" size="5" onChange="CalculateTotal(this.form)"></td>
-              <td style="width:152px;">Attendees<br /><br />Attendees</td>
+              <td colspan="3" data-th="Number of Attendees: " >
+                <span>Member: @ $95.00</span><input name="PROD_Memattendee1_95.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Attendees<br />
+                <span>Non-Member: @ $115.00</span><input name="PROD_attendee1_115.00" type="text" min="0" size="5" onChange="CalculateTotal(this.form)"> Attendees
+              </td>
             </tr>
           <?php } ?>        
           
@@ -84,7 +86,7 @@ get_header(); ?>
           </tr>
           <tr>
             <td colspan="4"  class="blank-td"></td>
-            <td colspan="3"><span>Banquet: @ $60.00</span> <input name="PROD_Banquet_60.00" type="number" size="5" onChange="CalculateTotal(this.form)"> Banquet Tickets</td>
+            <td colspan="3"><span>Banquet: @ $60.00</span> <input name="PROD_Banquet_60.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Banquet Tickets</td>
           </tr>
           <tr>
             <th colspan="4">GOLF TOURNAMENT - Limited to the first 124 entries</th>
@@ -93,8 +95,8 @@ get_header(); ?>
           <tr>
             <td colspan="4" class="blank-td">&nbsp;</td>
             <td colspan="3">
-            <span>Hole Sponsor: @ $100.00</span> <input name="PROD_holdsponsor_100.00" type="number" size="5" onChange="CalculateTotal(this.form)"> Holes Sponsored <br />
-            <span>Entry Fee: @ $95.00</span> <input name="PROD_golfentry_95.00" type="number" size="5" onChange="CalculateTotal(this.form)"> Entry Fees</td>
+            <span>Hole Sponsor: @ $100.00</span> <input name="PROD_holdsponsor_100.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Holes Sponsored <br />
+            <span>Entry Fee: @ $95.00</span> <input name="PROD_golfentry_95.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Entry Fees</td>
           </tr>
           <tr>
             <th colspan="4">TRADESHOW ONLY</th>
@@ -102,7 +104,7 @@ get_header(); ?>
           </tr>
           <tr>
             <td colspan="4" >(Registration and name badge required)</td>
-            <td colspan="3"><span>Show Price: <strong>FREE</strong></span><input name="PROD_TRADEONLY_0.00" type="number" size="5" onChange="CalculateTotal(this.form)">Tradeshow Tickets</td>
+            <td colspan="3"><span>Show Price: <strong>FREE</strong></span><input name="PROD_TRADEONLY_0.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)">Tradeshow Tickets</td>
           </tr>
           <tr>
             <td colspan="7" class="grand-total"><strong>GRAND TOTAL AMOUNT DUE: </strong><INPUT TYPE=TEXT NAME=chargetotal SIZE=10 onFocus="this.form.elements[0].focus()"></td>
@@ -305,10 +307,6 @@ get_header(); ?>
           <iframe name="ifr2" width="1px" height="1px" frameborder="0"></iframe>
 
         </div>
-        &nbsp; <b>         
-        <br />
-
-        <hr class="accessibility" />
         <div class="clear"></div>
       </div>
 

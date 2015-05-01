@@ -48,11 +48,11 @@
 	<div class="cover-image">
 		<div class="container">
 		    <div class="cta-item">
-				<img src="<?php bloginfo('url'); ?>/wp-content/uploads/logo2.png" />
+				<img src="<?php bloginfo('url'); ?>/wp-content/uploads/downstream-logo.png" />
 				<ul>
-					<li>blurb here</li>
-					<li>blurb here</li>
-					<li>blurb here</li>
+					<li>August 6-8</li>
+					<li><a href="//downstreamcasino.com">Downstreamcasino.com</a></li>
+					<li><a href="tel:8883967876">888.396.7876</a></li>
 				</ul>
 		      <a href="" data-hover="Register" class="link">Register</a>
 		    </div>

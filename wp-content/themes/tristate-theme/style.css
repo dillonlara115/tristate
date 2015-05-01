@@ -759,7 +759,7 @@ header.site-header {
   header.site-header .blip {
     position: absolute;
     background: #fff;
-    width: 40px;
+    width: 50px;
     height: 4px;
     top: 56px;
     -webkit-transition: all .5s ease-in-out;
@@ -953,7 +953,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .cta-item {
   text-align: center;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.3);
   padding: 1em;
   width: auto;
   float: right;
@@ -1424,8 +1424,9 @@ h1, h2, h3, h4, h5, h6 {
 .pull-left {
   float: left; }
 
-.pull-right {
-  float: right; }
+@media (min-width: 48em) {
+  .pull-right {
+    float: right; } }
 
 @media (max-width: 48em) {
   .blank-td {
@@ -1438,14 +1439,18 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1em;
   display: inline-block; }
 
+.header-row {
+  border-top: 1px solid #525254; }
+
 .registration-table-container {
   font-size: .75em;
   margin: -1.3em; }
   .registration-table-container h3 {
     color: #ccc; }
   .registration-table-container input[type="text"], .registration-table-container input[type="number"], .registration-table-container select {
-    display: inline-block;
-    width: 90%; }
+    display: inline-block; }
+  .registration-table-container select {
+    margin-bottom: 0; }
   .registration-table-container td {
     padding: .75em; }
     .registration-table-container td:before {
@@ -1491,7 +1496,7 @@ h1, h2, h3, h4, h5, h6 {
       display: inline-block;
       margin-left: 1em; }
   .registration-table-container .attendees-table-list {
-    border-bottom: 1px solid; }
+    border: 1px solid #525254; }
     @media (max-width: 48em) {
       .registration-table-container .attendees-table-list th {
         display: none; } }
@@ -1501,8 +1506,7 @@ h1, h2, h3, h4, h5, h6 {
         .registration-table-container .attendees-table-list .attendees-name-header {
           width: 252px; } }
     .registration-table-container .attendees-table-list td {
-      border-style: solid;
-      border-width: 1px;
+      border: 1px solid #525254;
       text-align: center; }
       @media (max-width: 48em) {
         .registration-table-container .attendees-table-list td {
@@ -1512,6 +1516,6 @@ h1, h2, h3, h4, h5, h6 {
           border-bottom: 0; } }
       @media (max-width: 48em) {
         .registration-table-container .attendees-table-list td:first-child {
-          border-top: 1px solid; } }
+          border-top: 1px solid #525254; } }
       .registration-table-container .attendees-table-list td:first-child:before {
         display: block; }

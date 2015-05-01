@@ -12,13 +12,24 @@
 	  	$.sidr 'close'
 		
 
-	memberCount = $('.member-count')
-	regularCount = $('.reg-count')
+	memberCountChange = $('.member-count')
+	regularCountChange = $('.reg-count')
+	memberCount = memberCountChange.val()
+	regularCount = regularCountChange.val()
+	totalNumberOfAttendees = memberCount + regularCount
 
-	console.log('test')
-	memberCount.on 'blur', -> 
-		console.log(memberCount.val())
+	memberCountChange.on 'change', -> 
+		memberCount 
+		console.log(totalNumberOfAttendees)
 
+	regularCountChange.on 'change', ->
+		regularCount 
+		console.log(totalNumberOfAttendees)
+
+
+
+
+	
 	$blip = $('.blip');
 
 	$('#primary-menu>li').on 'mouseover', ->

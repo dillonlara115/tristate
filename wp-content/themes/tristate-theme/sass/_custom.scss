@@ -59,7 +59,7 @@ header.site-header {
 .blip {
   position: absolute;
   background: #fff;
-  width: 40px;
+  width: 50px;
   height: 4px;
   top: 56px;
   @include transition(all .5s ease-in-out);
@@ -323,7 +323,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .cta-item {
   text-align: center;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.3);
   padding: 1em;
   width: auto;
   float: right;
@@ -889,7 +889,10 @@ h1, h2, h3, h4, h5, h6 {
   float: left;
 }
 .pull-right {
-  float: right;
+  @media (min-width: 48em) {
+    float: right;
+  }
+  
 }
 
 .blank-td {
@@ -910,6 +913,9 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
   }
 }
+.header-row {
+  border-top: 1px solid #525254;
+}
 .registration-table-container {
   font-size: .75em;
   margin: -1.3em;
@@ -918,7 +924,9 @@ h1, h2, h3, h4, h5, h6 {
   }
   input[type="text"], input[type="number"], select {
     display: inline-block;
-    width: 90%;
+  }
+  select {
+    margin-bottom: 0;
   }
   td {
     padding: .75em;
@@ -981,7 +989,7 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
   .attendees-table-list {
-    border-bottom: 1px solid;
+    border: 1px solid #525254;
     th {
       @media (max-width: 48em) {
         display: none;
@@ -994,8 +1002,7 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
     td {
-      border-style: solid;
-      border-width: 1px;
+      border: 1px solid #525254;
       text-align:center;
       @media (max-width: 48em) {
         display: block;
@@ -1006,7 +1013,7 @@ h1, h2, h3, h4, h5, h6 {
       
       &:first-child {
         @media (max-width: 48em){
-          border-top: 1px solid;
+          border-top: 1px solid #525254;
         }
         &:before {
           display: block;
