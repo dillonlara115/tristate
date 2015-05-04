@@ -1,4 +1,5 @@
 //Header navigation
+$large-screen: em(860);
 header.site-header {
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
@@ -47,8 +48,11 @@ header.site-header {
     }
     img {
       max-height: $navigation-height + 55px;
-      @media (max-width:48em) {
-        max-height: 70px;
+      @media (max-width: 48em) {
+        max-height: 75px;
+      }
+      @media (max-width: 32em) { 
+        max-height: 60px;
       }
     }
   }
@@ -57,6 +61,10 @@ header.site-header {
   position: relative;
 }
 .blip {
+  @include media(60em) {
+    display: block;
+  }
+  display: none;
   position: absolute;
   background: #fff;
   width: 50px;
@@ -96,7 +104,7 @@ header.site-header {
         max-height: 70px;
       }
     @include media ($horizontal-bar-mode) {
-      float: left;
+      float: right;
     }
   }
 
@@ -128,7 +136,7 @@ header.site-header {
     display: block;
     line-height: $navigation-height;
     overflow: hidden;
-    text-align: right;
+    text-align: left;
     width: 100%;
     z-index: 9999;
     text-transform: uppercase;
@@ -248,7 +256,7 @@ header.site-header {
       a {
         background-color: darken($navigation-background, 3%);
         display: inline-block;
-        text-align: right;
+        text-align: left;
         width: 100%;
         @include transition(all .2s ease);
         @include media($horizontal-bar-mode) {
@@ -274,6 +282,11 @@ header.site-header {
   font-size: 4em;
   float: right;
   padding: 0em 0.2em;
+  height: 68px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  top: -0.3em;
   @media (min-width: 60em) {
     display: none;
   }
@@ -308,6 +321,21 @@ header.site-header li.menu-item-has-children > .sub-menu, header.site-header li.
   padding: 1em;
 }
 
+.see-more-link {
+  text-decoration: none;
+  &:before {
+    content: "\f192";
+    position: relative;
+    bottom: 2px;
+    padding-right: 5px;
+    display: inline-block;
+    font: normal normal normal 10px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+  }
+}
  //H1-H6
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Coustard', serif;
@@ -320,24 +348,47 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0 auto;
   height: 100%;
+  max-width: 800px;
 }
 .cta-item {
   text-align: center;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.7);
   padding: 1em;
   width: auto;
-  float: right;
   height: 100%;
+  @include media(min-width 48em) {
+    padding: 3em;
+  }
   img {
     display: block;
-    max-width: 300px;
+    margin: 0 auto;
+    max-width: 200px;
     padding-bottom: 1em;
+    @include media(min-width 48em) {
+      max-width: 300px;
+    }
   }
   ul li {
     margin-bottom: .75em;
     color: #eee;
+    display: inline-block;
+  }
+  p {
+    color: #fff;
   }
 
+}
+.cover-image-sub {
+  height: 270px!important;
+}
+.cta-container h1 {
+  color: #fff;
+  margin-top: 1.2em;
+  padding: 0.8em 1em;
+  background: rgba(0, 0, 0, 0.64);
+  display: inline-block;
+  line-height: 1.5;
+  border: 1px solid #eee;
 }
 
 .link {
@@ -384,15 +435,27 @@ h1, h2, h3, h4, h5, h6 {
 .cover-image {
   background: url("http://maxtestdomain.com/tristatesignexpo/wp-content/uploads/DownstreamCasinoPH2_02_ext-overall_night.jpg");
   background-color: #ccc;
-  background-position: center;
+  background-position-x: center;
   background-repeat: no-repeat;
   width: 100%;
   height: 480px;
-  position: relative;
-  background-attachment: fixed;
-  padding: 1em;
+  padding: 3em 1em;
   background-size: cover;
-  background-position-y: -15em;
+  @include media(max-width 32em) {
+    background-position-y: center;
+  }
+  @include media(min-width 1000px) {
+    background-position-y: -14em;
+  }
+   @include media(min-width 1300px) {
+    background-position-y: -18em;
+  }
+  @include media(min-width 1600px) {
+    background-position-y: -24em;
+  }
+  @include media(1800px) {
+    background-position-y: -30em;
+  }
 }
 
 
@@ -501,46 +564,29 @@ h1, h2, h3, h4, h5, h6 {
   .bullet {
     @include flex-basis(18em);
     @include flex-grow(1);
-    .fa {
-      font-size: 1.7em;
-      text-align: center;
-    } 
   }
 
-  .bullet-icon {
-    background: $action-color;
-    border-radius: 50%;
-    float: left;
-    height: $icon-bullet-size;
-    padding: $icon-bullet-size / 4;
-    width: $icon-bullet-size;
-  }
-
-  .bullet-icon-1 {
-    background: $action-color;
-  }
-
-  .bullet-icon-2 {
-    background: adjust-hue($action-color, -50%);
-  }
-
-  .bullet-icon-3 {
-    background: adjust-hue($action-color, -140%);
-  }
 
   .bullet-content {
-    margin-left: $icon-bullet-size * 1.4;
+    
     margin-bottom: 2em;
+    @include media(min-width 600px) {
+      margin-left: 1.4em;
+    }
+    ul {
+      margin-left: 1.5em;
+    }
     li {
       list-style-type: initial;
     }
   }
 
   h2 {
-    border-bottom: 1px solid transparentize($base-font-color, 0.8);
-    display: inline-block;
+    border-bottom: 3px solid rgb(213, 37, 47);
+    color: rgb(213, 37, 47);
+    display: block;
     font-size: $icon-bullet-size / 2.5;
-    margin: 0 0 ($icon-bullet-size / 6) 0;
+    margin: 0;
     padding-top: $icon-bullet-size / 7;
   }
   strong {
@@ -549,14 +595,62 @@ h1, h2, h3, h4, h5, h6 {
   p {
     color: $base-font-color;
     line-height: $base-line-height;
+    margin: 0;
+
   }
 
   img {
     max-width: 100%;
   }
 }
+.text-center {
+  text-align: center;
+}
+.register-link {
+  clear: both;
+  float: left;
+}
+.entry-content {
+  @include media($large-screen) {
+    float: right;
+    width: 72%;
+    padding: 1%;
+    margin-top: 0;
+  }
+}
+//Sidebar
+.widget-area {
+  @include media($large-screen) {
+    float: left;
+    width: 230px!important;
+    padding: 1%;
+  }
+  h1 {
+    font-size: 1em;
+  }
+  li {
+    margin-bottom: .5em;
+  }
 
+}
 
+.widget_nav_menu {
+  border-bottom: 3px solid rgb(213, 37, 47);
+  a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #666;
+    @include transition(color 250ms);
+    &:hover {
+      color: rgb(213, 37, 47);
+    }
+  }
+  .current_page_item a {
+    font-weight: bold;
+    color: rgb(213, 37, 47);
+  }
+}
 // Footer
 .footer {
   $base-spacing: 1.5em !default;
@@ -564,50 +658,45 @@ h1, h2, h3, h4, h5, h6 {
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
   $footer-background: #000;
-  $footer-color: #cbcbcb;
+  $footer-color: #fff;
   $footer-link-color: transparentize($footer-color, 0.6);
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
   background: $footer-background;
   padding: ($base-spacing * 2) $gutter;
   width: 100%;
-
+  a {
+    text-decoration: none;
+  }
   .footer-logo {
     margin-bottom: 2em;
     text-align: center;
-
+    height: 0;
     img {
-      height: 6em;
+      position: relative;
+      top: -6.6em;
     }
   } 
 
   .footer-links {
     @include clearfix;
     margin-bottom: $base-spacing;
-
-    @include media($medium-screen) {
-      @include shift(4.5);
-    }
+    color: #fff;
+    text-align: center;
   }
 
   ul {
     padding: 0;
-
-    @include media($medium-screen) {
-      @include span-columns(3);
-      @include omega(3n);
-      @include clearfix;
-    }
   }
 
   li {
     line-height: 1.5em;
     list-style: none;
     text-align: center;
-
-    @include media($medium-screen) {
-      text-align: left;
-    }
+    display: inline-block;
+    padding: 0 .5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 
   li a {
@@ -620,18 +709,12 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  li h3 {
+  h3 {
     color: $footer-color;
     font-size: 1em;
     font-weight: 800;
     margin-bottom: 0.4em;
   }  
-
-  hr {
-    border: 1px solid transparentize($footer-disclaimer-color, 0.3);
-    margin: 0 auto $base-spacing;
-    width: 12em;
-  }
 
   p {
     color: $footer-disclaimer-color;

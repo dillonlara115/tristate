@@ -14,20 +14,14 @@
     <img src="<?php bloginfo('url'); ?>/wp-content/uploads/logo2.png" />
   </div>
   <div class="footer-links">
-    <ul>
-      <li><h3>Content</h3></li>
-      <li><?php wp_nav_menu( array('menu' => 'footer menu' )); ?>
-</li>
-    </ul>
-    <ul>
-      <li><h3>Follow Us</h3></li>
-      <li><a href="https://www.facebook.com/tristatesignexpo" target="_blank">Facebook</a></li>
-      <li><a href="https://twitter.com/tristatesign" target="_blank">Twitter</a></li>
-      <li><a href="https://www.linkedin.com/company/tri-state-sign-association?trk=biz-companies-cym" target="_blank">Linkedin</a></li>
-    </ul>
+      <?php wp_nav_menu( array('menu' => 'footer menu' )); ?>
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/tristatesignexpo" target="_blank"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/facebook.png"></a></li>
+        <li><a href="https://twitter.com/tristatesign" target="_blank"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/twitter.png"></a></li>
+        <li><a href="https://www.linkedin.com/company/tri-state-sign-association?trk=biz-companies-cym" target="_blank"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/linkedin.png"></a></li>
+      </ul>
   </div>
-  
-  <hr>
   
   <p>&#169; <?php echo date('Y'); ?> Tri-State Sign Expo. All Rights Reserved. Website Designed by <a href="http://ventamarketing.com/" rel="designer">Venta Marketing</a></p>
 </footer>

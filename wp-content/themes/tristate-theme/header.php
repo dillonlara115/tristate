@@ -48,20 +48,28 @@
 	<div class="cover-image">
 		<div class="container">
 		    <div class="cta-item">
-				<img src="<?php bloginfo('url'); ?>/wp-content/uploads/downstream-logo.png" />
+				<img src="<?php bloginfo('url'); ?>/wp-content/uploads/downstream-logo-white.png" />
 				<ul>
 					<li>August 6-8</li>
-					<li><a href="//downstreamcasino.com">Downstreamcasino.com</a></li>
-					<li><a href="tel:8883967876">888.396.7876</a></li>
+					<li> &bull; Joplin, MO &bull; </li>
+					<li>Downstream Casino Resort</li>
 				</ul>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		      <a href="" data-hover="Register" class="link">Register</a>
 		    </div>
 		</div>
-	  
-
-
-	  
 	</div>
+    <?php } else { ?>
+        <?php if (has_post_thumbnail() ) { ?>
+            <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+            <div class="cover-image cover-image-sub" style="background: url(<?php echo $feat_image ?>) no-repeat center center;background-size: cover;background-position-y: -130px;">
+        <?php } else { ?>
+            <div class="cover-image cover-image-sub">
+        <?php } ?>
+            <div class="cta-container text-center">
+                <h1><?php echo get_the_title(); ?></h1>
+            </div>
+        </div>
+    <?php } ?>
 
-	<?php } ?>
 	<div id="content" class="site-content  container">

@@ -13,12 +13,10 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area register-page">
-  <header class="endivy-header">
-    <?php the_title( '<h1 class="endivy-title">', '</h1>' ); ?>
-  </header><!-- .endivy-header -->
+<div id="primary" class="content-area entry-content register-page">
+  
   <?php echo $post->post_content ?>
-  <a href="uploads/2014_AttendeeForm_NEW.pdf" target="_blank" class='link' data-hover="Download Attendee Registration Form (PDF)">Download Attendee Registration Form (PDF)</a>
+  <a href="uploads/2014_AttendeeForm_NEW.pdf" class="register-link" target="_blank" >Download Attendee Registration Form (PDF)</a>
   <div id="main" class="registration-table-container">
     <br /><br />
     <div style="align:auto">
@@ -118,7 +116,7 @@ get_header(); ?>
           </tr>
           <tr>
             <th rowspan="3" style="background: #525254;color:#fff;text-align:center;">General Registration & Trade Show<br /></th>
-            <th rowspan="3" style="background: #525254;color:#fff;text-align:center;">Hall of Fame/Scholarship Awards Banquet<br /></th>
+            <th rowspan="3" style="background: #525254;color:#fff;text-align:center;">Hall of Fame/ Scholarship Awards Banquet<br /></th>
             <th colspan="2" rowspan ="3" style="background: #525254;color:#fff;text-align:center;">Educational Seminars<br /></th>
 
             <th rowspan="3" style="background: #525254;color:#fff;text-align:center;">Golfers Handicap<br /></th>
@@ -300,7 +298,7 @@ get_header(); ?>
           </tr>
         </table>
         <strong>CLICK PROCEED TO PAY & ENTER CREDIT CARD PAYMENT INFORMATION BELOW&nbsp;&nbsp;&nbsp;<input type="hidden" name="storename" value="1001262950"><INPUT type="button" value="PROCEED WITH PAYMENT" onclick="submitTwice(this.form)"></strong><br />
-        <b>CLICK IF REGISTERING FOR TRADE SHOW ONLY(NO CC REQUIRED)&nbsp;&nbsp;
+        <b>CLICK IF REGISTERING FOR TRADE SHOW ONLY(NO CC REQUIRED)&nbsp;&nbsp;</b>
           <INPUT type="button" value="TRADE SHOW ONLY" onclick="submitOnce(this.form)">
           </form>
           <iframe name="ifr1" width="760px" height="400px" frameborder="0"></iframe>
@@ -420,5 +418,5 @@ function CalculateTotal(frm) {
   }
 </script>
 
-
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
