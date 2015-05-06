@@ -13,10 +13,8 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-<header class="entry-header">
-    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-  </header><!-- .entry-header -->
+	<div id="primary" class="content-area entry-content">
+
   <?php the_content(); ?>
 
 <div class="cards">
@@ -25,17 +23,7 @@ $args = array( 'post_type' => 'event', 'posts_per_page' => 10 );
 $loop = new WP_Query( $args );
 while ( $loop->have_posts() ) : $loop->the_post(); ?>
   <div class="card">
-    <div class="card-image">
-      <?php 
 
-      $image = get_field('image');
-
-      if( !empty($image) ): ?>
-
-        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-
-      <?php endif; ?>
-    </div>
     <div class="card-header">
       <?php the_field('seminar_title'); ?>
     </div>
@@ -53,4 +41,5 @@ while ( $loop->have_posts() ) : $loop->the_post(); ?>
 	</div><!-- #primary -->
 
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

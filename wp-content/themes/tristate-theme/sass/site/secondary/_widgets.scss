@@ -1,9 +1,24 @@
 .widget {
 	margin: 0 0 1.5em;
-
+	background: #eee;
+	padding: 2em;
+	border-bottom: 3px solid rgb(213, 37, 47);
 	/* Make sure select elements fit in widgets. */
 	select {
 		max-width: 100%;
+	}
+	li {
+		border-bottom: 1px solid;
+  		padding: 1em 0;
+	}
+	.textwidget {
+		li {
+			border: none;
+			padding: .5em 0;
+			.fa {
+				color: rgb(213, 37, 47);
+			}
+		}
 	}
 }
 

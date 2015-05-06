@@ -48,13 +48,10 @@
 	<div class="cover-image">
 		<div class="container">
 		    <div class="cta-item">
-				<img src="<?php bloginfo('url'); ?>/wp-content/uploads/downstream-logo-white.png" />
-				<ul>
-					<li>August 6-8</li>
-					<li> &bull; Joplin, MO &bull; </li>
-					<li>Downstream Casino Resort</li>
-				</ul>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<h3>Join us for the 2015 Tri-State Sign Expo</h3>
+				<span class="lines">August 6-8, 2015</span>
+				<span><img src="<?php bloginfo('url'); ?>/wp-content/uploads/downstream-logo-white.png" /> &bull; Joplin, MO</span>
+				
 		      <a href="" data-hover="Register" class="link">Register</a>
 		    </div>
 		</div>
@@ -62,7 +59,7 @@
     <?php } else { ?>
         <?php if (has_post_thumbnail() ) { ?>
             <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-            <div class="cover-image cover-image-sub" style="background: url(<?php echo $feat_image ?>) no-repeat center center;background-size: cover;background-position-y: -130px;">
+            <div class="cover-image cover-image-sub" style="background: url(<?php echo $feat_image ?>) no-repeat center center;background-size: cover;background-position-y: center;">
         <?php } else { ?>
             <div class="cover-image cover-image-sub">
         <?php } ?>

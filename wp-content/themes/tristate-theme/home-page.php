@@ -37,7 +37,7 @@ get_header(); ?>
         <li>Learn from industry experts</li>
         <li>Find out how to be successful in today’s challenging business.</li>
       </ul>
-      <a href="index.php?page_id=40" class="see-more-link" >see more</a>
+      <a href="index.php?page_id=40" class="see-more-link" ><i class="red-dot"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/red-dot.png"></i>see more</a>
     </div>
   </li>
   <li class="bullet">

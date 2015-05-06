@@ -331,7 +331,8 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #666; }
+  color: #666;
+  text-decoration: none; }
   a:visited {
     color: #666; }
   a:hover, a:focus, a:active {
@@ -461,9 +462,20 @@ a {
 --------------------------------------------------------------*/
 .widget {
   margin: 0 0 1.5em;
+  background: #eee;
+  padding: 2em;
+  border-bottom: 3px solid #d5252f;
   /* Make sure select elements fit in widgets. */ }
   .widget select {
     max-width: 100%; }
+  .widget li {
+    border-bottom: 1px solid;
+    padding: 1em 0; }
+  .widget .textwidget li {
+    border: none;
+    padding: .5em 0; }
+    .widget .textwidget li .fa {
+      color: #d5252f; }
 
 /* Search widget. */
 .widget_search .search-submit {
@@ -953,20 +965,13 @@ header.site-header {
   padding: 1em; }
 
 .see-more-link {
-  text-decoration: none; }
-  .see-more-link:before {
-    content: "\f192";
-    position: relative;
-    bottom: 2px;
-    padding-right: 5px;
-    display: inline-block;
-    font: normal normal normal 10px/1 FontAwesome;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transform: translate(0, 0); }
+  text-decoration: none;
+  display: inline-block; }
+  .see-more-link .red-dot img {
+    width: 10px;
+    margin-right: 5px; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .card-header {
   font-family: 'Coustard', serif;
   -webkit-font-smoothing: antialiased;
   text-transform: uppercase;
@@ -976,7 +981,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0 auto;
   height: 100%;
-  max-width: 800px; }
+  max-width: 650px; }
 
 .cta-item {
   text-align: center;
@@ -984,30 +989,33 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1em;
   width: auto;
   height: 100%; }
-  @media screen and (min-width: 48em)  {
-    .cta-item {
-      padding: 3em; } }
   .cta-item img {
-    display: block;
     margin: 0 auto;
-    max-width: 200px;
-    padding-bottom: 1em; }
-    @media screen and (min-width: 48em)  {
-      .cta-item img {
-        max-width: 300px; } }
-  .cta-item ul li {
+    max-width: 100px; }
+  .cta-item span {
     margin-bottom: .75em;
     color: #eee;
-    display: inline-block; }
-  .cta-item p {
-    color: #fff; }
+    display: block;
+    text-transform: uppercase;
+    vertical-align: top; }
+  .cta-item h3 {
+    color: #fff;
+    font-family: 'Coustard', serif;
+    font-size: 2.1em;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
 
-.cover-image-sub {
+.cover-image.cover-image-sub {
   height: 270px !important; }
+  @media screen and (max-width: 28em)  {
+    .cover-image.cover-image-sub {
+      padding: 0.5em; } }
+  @media screen and (max-width: 28em)  {
+    .cover-image.cover-image-sub .cta-container h1 {
+      font-size: 1.5em; } }
 
 .cta-container h1 {
   color: #fff;
-  margin-top: 1.2em;
   padding: 0.8em 1em;
   background: rgba(0, 0, 0, 0.64);
   display: inline-block;
@@ -1022,11 +1030,11 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   display: inline-block;
   padding: 3px 15px 0;
-  background: #000;
+  color: #d5252f;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
-  box-shadow: inset 0 3px #FFF;
+  box-shadow: inset 0 3px #d5252f;
   -webkit-transition: background .6s;
   -moz-transition: background .6s;
   transition: background .6s;
@@ -1041,14 +1049,16 @@ h1, h2, h3, h4, h5, h6 {
   -o-transform-origin: 0% 50%;
   transform-origin: 0% 50%;
   text-decoration: none; }
+  .link:visited {
+    color: #d5252f; }
   .link:before {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #fff;
-    color: #2f4351;
+    background: #d5252f;
+    color: #fff;
     content: attr(data-hover);
     -webkit-transform: rotateX(270deg);
     -moz-transform: rotateX(270deg);
@@ -1068,13 +1078,18 @@ h1, h2, h3, h4, h5, h6 {
     transform-origin: 0 0;
     pointer-events: none; }
   .link:hover {
-    color: #ccc; }
+    color: #d5252f; }
     .link:hover:before {
       -webkit-transform: rotateX(10deg);
       -moz-transform: rotateX(10deg);
       -ms-transform: rotateX(10deg);
       -o-transform: rotateX(10deg);
       transform: rotateX(10deg); }
+
+.lines:before, .lines:after {
+  letter-spacing: -1px;
+  padding: 0 .5em;
+  vertical-align: top; }
 
 .cover-image {
   background: url("http://maxtestdomain.com/tristatesignexpo/wp-content/uploads/DownstreamCasinoPH2_02_ext-overall_night.jpg");
@@ -1083,7 +1098,7 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
   width: 100%;
   height: 480px;
-  padding: 3em 1em;
+  padding: 4.5em 1em;
   background-size: cover; }
   @media screen and (max-width: 32em)  {
     .cover-image {
@@ -1101,12 +1116,20 @@ h1, h2, h3, h4, h5, h6 {
     .cover-image {
       background-position-y: -30em; } }
 
+.center-content {
+  text-align: center; }
+  .center-content small {
+    margin-bottom: 2em;
+    display: block; }
+
 .grid-items-lines {
   position: relative; }
   .grid-items-lines::after {
     clear: both;
     content: "";
     display: table; }
+  .grid-items-lines .fa {
+    color: #d5252f; }
   .grid-items-lines .grid-item {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -1182,11 +1205,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 2em; }
     @media screen and (min-width: 600px)  {
       .bullets .bullet-content {
-        margin-left: 1.4em; } }
+        margin-left: 1.4em;
+        margin-right: 10px; } }
     .bullets .bullet-content ul {
-      margin-left: 1.5em; }
+      margin: 10px 1.5em; }
     .bullets .bullet-content li {
-      list-style-type: initial; }
+      list-style-type: initial;
+      font-size: .9em; }
   .bullets h2 {
     border-bottom: 3px solid #d5252f;
     color: #d5252f;
@@ -1213,37 +1238,40 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (min-width: 53.75em) {
   .entry-content {
     float: right;
-    width: 72%;
+    width: 63%;
     padding: 1%;
-    margin-top: 0; } }
+    margin-top: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; } }
 
 @media screen and (min-width: 53.75em) {
   .widget-area {
     float: left;
-    width: 230px !important;
-    padding: 1%; } }
+    max-width: 300px !important;
+    padding: 1%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; } }
 .widget-area h1 {
   font-size: 1em; }
 .widget-area li {
   margin-bottom: .5em; }
 
-.widget_nav_menu {
-  border-bottom: 3px solid #d5252f; }
-  .widget_nav_menu a {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-    color: #666;
-    -webkit-transition: color 250ms;
-    -moz-transition: color 250ms;
-    transition: color 250ms; }
-    .widget_nav_menu a:hover {
-      color: #d5252f; }
-  .widget_nav_menu .current_page_item a {
-    font-weight: bold;
-    color: #d5252f; }
+.widget_nav_menu a {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: #666;
+  -webkit-transition: color 250ms;
+  -moz-transition: color 250ms;
+  transition: color 250ms; }
+.widget_nav_menu .current_page_item a {
+  font-weight: bold;
+  color: #d5252f; }
 
 .footer {
+  margin-top: 5em;
   background: #000;
   padding: 3em 1.618em;
   width: 100%; }
@@ -1266,17 +1294,20 @@ h1, h2, h3, h4, h5, h6 {
       display: table; }
   .footer ul {
     padding: 0; }
+  .footer .menu-footer-menu-container {
+    margin-bottom: 1.5em; }
   .footer li {
     line-height: 1.5em;
     list-style: none;
     text-align: center;
     display: inline-block;
-    padding: 0 .5em;
+    padding: 0 1em;
     text-transform: uppercase;
     letter-spacing: 2px; }
   .footer li a {
     color: rgba(255, 255, 255, 0.4);
-    text-decoration: none; }
+    text-decoration: none;
+    font-size: .9em; }
     .footer li a:focus, .footer li a:hover {
       color: white; }
   .footer h3 {
@@ -1361,6 +1392,9 @@ h1, h2, h3, h4, h5, h6 {
         cursor: not-allowed;
         opacity: 0.5; }
 
+.secondary-header {
+  color: #d5252f; }
+
 .table-minimal {
   border-collapse: separate;
   border-spacing: 0;
@@ -1373,7 +1407,8 @@ h1, h2, h3, h4, h5, h6 {
     background-color: white;
     border-bottom: 0px;
     padding: .75em 1em;
-    text-align: left; }
+    text-align: left;
+    color: #d5252f; }
   .table-minimal tbody {
     background-color: #fff; }
     .table-minimal tbody td {
@@ -1440,10 +1475,10 @@ h1, h2, h3, h4, h5, h6 {
   -ms-flex-pack: justify; }
 
 .card {
-  -webkit-flex-basis: 15em;
-  -moz-flex-basis: 15em;
-  flex-basis: 15em;
-  -ms-flex-preferred-size: 15em;
+  -webkit-flex-basis: 17em;
+  -moz-flex-basis: 17em;
+  flex-basis: 17em;
+  -ms-flex-preferred-size: 17em;
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
   flex-grow: 1;
@@ -1451,49 +1486,27 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  background-color: #f7f7f7;
-  border-radius: 3px;
   border: 1px solid #ddd;
   box-shadow: 0 2px 4px #e6e6e6;
   margin: 0 1em 1.5em 1em;
   position: relative; }
-  .card .card-image {
-    overflow: hidden;
-    max-height: 150px; }
-    .card .card-image img {
-      -webkit-transition: all 0.2s ease-in-out;
-      -moz-transition: all 0.2s ease-in-out;
-      transition: all 0.2s ease-in-out;
-      background: #DBD199;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-      width: 100%; }
   .card .card-header {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    background-color: #f7f7f7;
     border-bottom: 1px solid #ddd;
-    border-radius: 3px 3px 0 0;
+    color: #d5252f;
     font-weight: bold;
     line-height: 1.5em;
-    padding: 0.5em 0.75em; }
+    padding: 1.5em; }
   .card .card-copy {
     font-size: 0.9em;
     line-height: 1.5em;
-    padding: 0.75em 0.75em; }
+    padding: 1.5em; }
     .card .card-copy p {
       margin: 0 0 0.75em; }
-  .card:focus, .card:hover {
-    background-color: white; }
-    .card:focus .card-image img, .card:hover .card-image img {
-      background: #e2daac; }
-    .card:focus .card-header, .card:hover .card-header {
-      background-color: white; }
-  .card:active {
-    background-color: #f7f7f7; }
-    .card:active .card-header {
-      background-color: #f7f7f7; }
+    .card .card-copy strong {
+      color: #d5252f; }
 
 .pull-left {
   float: left; }

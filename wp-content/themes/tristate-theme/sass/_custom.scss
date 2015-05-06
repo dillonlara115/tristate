@@ -323,21 +323,14 @@ header.site-header li.menu-item-has-children > .sub-menu, header.site-header li.
 
 .see-more-link {
   text-decoration: none;
-  &:before {
-    content: "\f192";
-    position: relative;
-    bottom: 2px;
-    padding-right: 5px;
-    display: inline-block;
-    font: normal normal normal 10px/1 FontAwesome;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transform: translate(0, 0);
+  display: inline-block;
+  .red-dot img{
+    width: 10px;
+    margin-right: 5px;
   }
 }
  //H1-H6
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .card-header {
   font-family: 'Coustard', serif;
   -webkit-font-smoothing: antialiased;
   text-transform: uppercase;
@@ -348,7 +341,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0 auto;
   height: 100%;
-  max-width: 800px;
+  max-width: 650px;
 }
 .cta-item {
   text-align: center;
@@ -356,34 +349,39 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1em;
   width: auto;
   height: 100%;
-  @include media(min-width 48em) {
-    padding: 3em;
-  }
   img {
-    display: block;
     margin: 0 auto;
-    max-width: 200px;
-    padding-bottom: 1em;
-    @include media(min-width 48em) {
-      max-width: 300px;
-    }
+    max-width: 100px;
   }
-  ul li {
+  span {
     margin-bottom: .75em;
     color: #eee;
-    display: inline-block;
+    display: block;
+    text-transform: uppercase;
+    vertical-align: top;
   }
-  p {
+  h3 {
     color: #fff;
+    font-family: 'Coustard', serif;
+    font-size: 2.1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 
 }
-.cover-image-sub {
+.cover-image.cover-image-sub {
   height: 270px!important;
+  @include media(max-width 28em) {
+    padding: 0.5em;
+  }
+  .cta-container h1 {
+    @include media(max-width 28em) {
+      font-size: 1.5em;
+    }
+  }
 }
 .cta-container h1 {
   color: #fff;
-  margin-top: 1.2em;
   padding: 0.8em 1em;
   background: rgba(0, 0, 0, 0.64);
   display: inline-block;
@@ -392,31 +390,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .link {
-    line-height: 2em;
-    -webkit-perspective: 800px;
-    -moz-perspective: 800px;
-    perspective: 800px;
-    position: relative;
-    display: inline-block;
-    padding: 3px 15px 0;
-    background: #000;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-    box-shadow: inset 0 3px #FFF;
-    @include transition(background .6s);
-    @include transform-style(preserve-3d);
-    @include transform-origin(0% 50%);
-    text-decoration: none;
-
+  line-height: 2em;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  perspective: 800px;
+  position: relative;
+  display: inline-block;
+  padding: 3px 15px 0;
+  color: #d5252f;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  box-shadow: inset 0 3px #d5252f;
+  @include transition(background .6s);
+  @include transform-style(preserve-3d);
+  @include transform-origin(0% 50%);
+  text-decoration: none;
+  &:visited {
+    color: #d5252f;
+  }
     &:before {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: #fff;
-      color: #2f4351;
+      background: #d5252f;
+      color: #fff;
       content: attr(data-hover);
       @include transform(rotateX(270deg));
       @include transition-property(transform);
@@ -425,11 +425,19 @@ h1, h2, h3, h4, h5, h6 {
       pointer-events: none;
     }
     &:hover {
-      color: #ccc;
+      color: #d5252f;
       &:before {
         @include transform(rotateX(10deg));
       }
     }
+}
+
+.lines {
+  &:before, &:after {
+    letter-spacing: -1px;
+    padding: 0 .5em;
+    vertical-align: top;
+  }
 }
 
 .cover-image {
@@ -439,7 +447,7 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
   width: 100%;
   height: 480px;
-  padding: 3em 1em;
+  padding: 4.5em 1em;
   background-size: cover;
   @include media(max-width 32em) {
     background-position-y: center;
@@ -458,7 +466,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
+.center-content {
+  text-align: center;
+  small {
+    margin-bottom: 2em;
+    display: block;
+  }
+}
 //schedules page grid
 @mixin grid-item-columns($columns) {
   width: (100% / 12) * $columns;
@@ -481,7 +495,9 @@ h1, h2, h3, h4, h5, h6 {
 
   @include clearfix;
   position: relative;
-    
+  .fa {
+    color: #d5252f;
+  }
   .grid-item {
     @include transition (all 0.2s ease-in-out);
     background: $grid-item-background;
@@ -572,12 +588,14 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 2em;
     @include media(min-width 600px) {
       margin-left: 1.4em;
+      margin-right: 10px;
     }
     ul {
-      margin-left: 1.5em;
+      margin: 10px 1.5em;
     }
     li {
       list-style-type: initial;
+      font-size: .9em;
     }
   }
 
@@ -613,17 +631,19 @@ h1, h2, h3, h4, h5, h6 {
 .entry-content {
   @include media($large-screen) {
     float: right;
-    width: 72%;
+    width: 63%;
     padding: 1%;
     margin-top: 0;
+    @include box-sizing(border-box);
   }
 }
 //Sidebar
 .widget-area {
   @include media($large-screen) {
     float: left;
-    width: 230px!important;
+    max-width: 300px!important;
     padding: 1%;
+    @include box-sizing(border-box);
   }
   h1 {
     font-size: 1em;
@@ -635,16 +655,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .widget_nav_menu {
-  border-bottom: 3px solid rgb(213, 37, 47);
+  
   a {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-decoration: none;
     color: #666;
     @include transition(color 250ms);
-    &:hover {
-      color: rgb(213, 37, 47);
-    }
   }
   .current_page_item a {
     font-weight: bold;
@@ -661,7 +678,7 @@ h1, h2, h3, h4, h5, h6 {
   $footer-color: #fff;
   $footer-link-color: transparentize($footer-color, 0.6);
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
-
+  margin-top: 5em;
   background: $footer-background;
   padding: ($base-spacing * 2) $gutter;
   width: 100%;
@@ -688,13 +705,15 @@ h1, h2, h3, h4, h5, h6 {
   ul {
     padding: 0;
   }
-
+  .menu-footer-menu-container {
+    margin-bottom: 1.5em;
+  }
   li {
     line-height: 1.5em;
     list-style: none;
     text-align: center;
     display: inline-block;
-    padding: 0 .5em;
+    padding: 0 1em;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
@@ -702,7 +721,7 @@ h1, h2, h3, h4, h5, h6 {
   li a {
     color: $footer-link-color;
     text-decoration: none;
-
+    font-size: .9em;
     &:focus,
     &:hover {
       color: transparentize($footer-color, 0);
@@ -800,7 +819,9 @@ h1, h2, h3, h4, h5, h6 {
   @include reset-display();
 }
 
-
+.secondary-header {
+  color: #d5252f;
+}
 //schedule page
 .table-minimal {
   $base-border-color: gainsboro !default;
@@ -843,6 +864,7 @@ h1, h2, h3, h4, h5, h6 {
       border-bottom: 0px;
       padding: $table-padding;
       text-align: left;
+      color: #d5252f;
     }
   }
 
@@ -901,69 +923,36 @@ h1, h2, h3, h4, h5, h6 {
   $card-image-hover-background: lighten($card-image-background, 5%);
   $card-margin: 1em;
 
-  @include flex-basis(15em);
+  @include flex-basis(17em);
   @include flex-grow(1);
   @include transition (all 0.2s ease-in-out);
-  background-color: $card-background;
-  border-radius: $base-border-radius;
   border: $card-border;
   box-shadow: 0 2px 4px darken($base-background-color, 10%);
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
 
-  .card-image {
-    overflow: hidden;
-    max-height: 150px;
-
-    img {
-      @include transition (all 0.2s ease-in-out);
-      background: $card-image-background;
-      border-top-left-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
-      width: 100%;
-    }
-  }
-
-  .card-header {
+  .card-header { 
     @include transition (all 0.2s ease-in-out);
-    background-color: $card-header-background;
     border-bottom: $card-border;
-    border-radius: $base-border-radius $base-border-radius 0 0;
+    color: #d5252f;
     font-weight: bold;
     line-height: 1.5em;
-    padding: ($base-spacing / 3) ($base-spacing / 2);
+    padding: $base-spacing;
   }
 
   .card-copy {
     font-size: 0.9em;
     line-height: 1.5em;
-    padding: ($base-spacing / 2) ($base-spacing / 2);
+    padding: $base-spacing;
 
     p {
       margin: 0 0 ($base-spacing / 2);
     }
-  }
-  
-  &:focus,
-  &:hover {
-    background-color: $card-hover-background;
-    
-    .card-image img {
-      background: $card-image-hover-background;
-    }
-  
-    .card-header {
-      background-color: $card-hover-background;
+    strong {
+      color: #d5252f;
     }
   }
 
-  &:active {
-    background-color: $card-background;
-
-    .card-header {
-      background-color: $card-background;
-    }
-  }
 }
 
 

@@ -15,7 +15,6 @@
   </div>
   <div class="footer-links">
       <?php wp_nav_menu( array('menu' => 'footer menu' )); ?>
-      <h3>Follow Us</h3>
       <ul>
         <li><a href="https://www.facebook.com/tristatesignexpo" target="_blank"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/facebook.png"></a></li>
         <li><a href="https://twitter.com/tristatesign" target="_blank"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/twitter.png"></a></li>
