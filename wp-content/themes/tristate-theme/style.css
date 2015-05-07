@@ -924,6 +924,25 @@ header.site-header {
             header.site-header ul.sub-menu li a:hover {
               background-color: #333; } }
 
+.home-register {
+  padding: 1em 1.5em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2em;
+  line-height: 1.2;
+  border: 1px solid #fff;
+  margin-top: 1em;
+  display: inline-block;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  transition: all 250ms ease; }
+  .home-register:visited {
+    color: #fff; }
+  .home-register:hover {
+    color: #d5252f;
+    border-color: #d5252f; }
+
 @media (max-width: 60em) {
   .desktop-nav {
     display: none !important; } }
@@ -978,9 +997,8 @@ h1, h2, h3, h4, h5, h6, .card-header {
   letter-spacing: 1px; }
 
 .cover-image .container {
-  padding: 0;
+  padding: 4.5em 0;
   margin: 0 auto;
-  height: 100%;
   max-width: 650px; }
 
 .cta-item {
@@ -988,7 +1006,8 @@ h1, h2, h3, h4, h5, h6, .card-header {
   background: rgba(0, 0, 0, 0.7);
   padding: 1em;
   width: auto;
-  height: 100%; }
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 1px; }
   .cta-item img {
     margin: 0 auto;
     max-width: 100px; }
@@ -997,13 +1016,15 @@ h1, h2, h3, h4, h5, h6, .card-header {
     color: #eee;
     display: block;
     text-transform: uppercase;
-    vertical-align: top; }
+    vertical-align: top;
+    font-size: 1.2em; }
   .cta-item h3 {
     color: #fff;
     font-family: 'Coustard', serif;
     font-size: 2.1em;
     text-transform: uppercase;
-    letter-spacing: 2px; }
+    letter-spacing: 2px;
+    margin: .5em 0; }
 
 .cover-image.cover-image-sub {
   height: 270px !important; }
@@ -1097,9 +1118,8 @@ h1, h2, h3, h4, h5, h6, .card-header {
   background-position-x: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 480px;
-  padding: 4.5em 1em;
-  background-size: cover; }
+  background-size: cover;
+  text-align: center; }
   @media screen and (max-width: 32em)  {
     .cover-image {
       background-position-y: center; } }

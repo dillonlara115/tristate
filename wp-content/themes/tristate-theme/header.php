@@ -48,12 +48,12 @@
 	<div class="cover-image">
 		<div class="container">
 		    <div class="cta-item">
-				<h3>Join us for the 2015 Tri-State Sign Expo</h3>
-				<span class="lines">August 6-8, 2015</span>
-				<span><img src="<?php bloginfo('url'); ?>/wp-content/uploads/downstream-logo-white.png" /> &bull; Joplin, MO</span>
-				
-		      <a href="" data-hover="Register" class="link">Register</a>
+		    	<span>Join Us For The</span>
+				<h3>2015 Tri-State Sign Expo</h3>
+				<span class="lines">August 6-8, 2015 in Joplin, MO</span>
+				<span><img src="<?php bloginfo('url'); ?>/wp-content/uploads/downstream-logo-white.png" /></span>
 		    </div>
+		    <a href="" class="home-register">Register</a>
 		</div>
 	</div>
     <?php } else { ?>

@@ -29,7 +29,7 @@ get_header(); ?>
   </li>  
   <li class="bullet">
     <div class="bullet-content">
-      <h2><i class="fa fa-graduation-cap"></i> Seminars</h2>
+      <h2><i class="fa fa-graduation-cap"></i> <a href="index.php?page_id=40" >Seminars</a></h2>
       <img src="<?php bloginfo('url'); ?>/wp-content/uploads/downstream.jpg">
       <strong>Premier Educational Seminars</strong>      
       <ul>
@@ -37,7 +37,6 @@ get_header(); ?>
         <li>Learn from industry experts</li>
         <li>Find out how to be successful in today’s challenging business.</li>
       </ul>
-      <a href="index.php?page_id=40" class="see-more-link" ><i class="red-dot"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/red-dot.png"></i>see more</a>
     </div>
   </li>
   <li class="bullet">
