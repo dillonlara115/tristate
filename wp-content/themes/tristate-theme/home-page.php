@@ -17,8 +17,8 @@ get_header(); ?>
   <ul class="bullets">
     <li class="bullet">
       <div class="bullet-content">
-        <h2> <i class="fa fa-star"></i> Tradeshow</h2>
-        <img src="<?php bloginfo('url'); ?>/wp-content/uploads/downstream.jpg">
+        <h2> <i class="fa fa-star"></i> <a href="index.php?page_id=2">Tradeshow</a></h2>
+        <img src="<?php bloginfo('url'); ?>/wp-content/uploads/tradeshow-hp-bucket.jpg">
         <strong>Premier Tradeshow</strong>  
         <ul>
           <li>New! Expanded Tradeshow. Two exhibits halls with over 14,000 square feet of display space.</li>
@@ -29,8 +29,8 @@ get_header(); ?>
   </li>  
   <li class="bullet">
     <div class="bullet-content">
-      <h2><i class="fa fa-graduation-cap"></i> <a href="index.php?page_id=40" >Seminars</a></h2>
-      <img src="<?php bloginfo('url'); ?>/wp-content/uploads/downstream.jpg">
+      <h2> <i class="fa fa-grad"></i> <a href="index.php?page_id=40" >Seminars</a></h2>
+      <img src="<?php bloginfo('url'); ?>/wp-content/uploads/seminar-hp-bucket.jpg">
       <strong>Premier Educational Seminars</strong>      
       <ul>
         <li>Powerful presentations covering relevant topics</li>
@@ -42,7 +42,7 @@ get_header(); ?>
   <li class="bullet">
     <div class="bullet-content">
       <h2><i class="fa fa-users"></i> Networking</h2>
-      <img src="<?php bloginfo('url'); ?>/wp-content/uploads/downstream.jpg">
+      <img src="<?php bloginfo('url'); ?>/wp-content/uploads/networking-hp-bucket.jpg">
       <strong>Premier Educational Seminars</strong>
       <p>Tradeshow, Seminars, Social and Recreational Activities.</p>
       <ul>

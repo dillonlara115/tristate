@@ -1,7 +1,7 @@
 .widget {
 	margin: 0 0 1.5em;
 	background: #eee;
-	padding: 2em;
+	padding: 1em 2em;
 	border-bottom: 3px solid rgb(213, 37, 47);
 	/* Make sure select elements fit in widgets. */
 	select {
@@ -17,6 +17,20 @@
 			padding: .5em 0;
 			.fa {
 				color: rgb(213, 37, 47);
+				font-size: 1.5em;
+				width: 35px;
+				height: 45px;
+				float: left;
+				&.phone-icon {
+					background: url(http://maxtestdomain.com/tristatesignexpo/wp-content/uploads/phone-red.png);
+					background-size: contain;
+					background-repeat: no-repeat;
+					width: 22px;
+					margin-right: 0.6em;
+				}
+			}
+			span {
+				vertical-align: text-top;
 			}
 		}
 	}

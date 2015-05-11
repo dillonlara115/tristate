@@ -283,6 +283,7 @@ header.site-header {
   border: 1px solid #fff;
   margin-top: 1em;
   display: inline-block;
+  background: rgba(0, 0, 0, 0.7);
   @include transition(all 250ms ease);
   &:visited {
     color: #fff;
@@ -372,10 +373,10 @@ h1, h2, h3, h4, h5, h6, .card-header {
 
   img {
     margin: 0 auto;
-    max-width: 100px;
+    max-width: 150px;
   }
   span {
-    margin-bottom: .75em;
+    margin: 1em 0 .5em;
     color: #eee;
     display: block;
     text-transform: uppercase;
@@ -388,7 +389,7 @@ h1, h2, h3, h4, h5, h6, .card-header {
     font-size: 2.1em;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin: .5em 0;
+    margin: 0;
   }
 
 }
@@ -397,9 +398,12 @@ h1, h2, h3, h4, h5, h6, .card-header {
   @include media(max-width 28em) {
     padding: 0.5em;
   }
-  .cta-container h1 {
-    @include media(max-width 28em) {
-      font-size: 1.5em;
+  .cta-container {
+    padding: 4em 0;
+    h1 {
+      @include media(max-width 28em) {
+        font-size: 1.5em;
+      }
     }
   }
 }
@@ -462,7 +466,15 @@ h1, h2, h3, h4, h5, h6, .card-header {
     vertical-align: top;
   }
 }
-
+.fa-grad:before {
+  content: "";
+  background: url("http://maxtestdomain.com/tristatesignexpo/wp-content/uploads/grad-cap.png");
+  width: 29px;
+  height: 21px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 .cover-image {
   background: url("http://maxtestdomain.com/tristatesignexpo/wp-content/uploads/DownstreamCasinoPH2_02_ext-overall_night.jpg");
   background-color: #ccc;
@@ -487,13 +499,31 @@ h1, h2, h3, h4, h5, h6, .card-header {
     background-position-y: -30em;
   }
 }
-
+.bullet-list {
+  li {
+    list-style-type: disc;
+    margin-left: 2em;
+  }
+}
+.golf-content {
+  display: block;
+  float: left;
+  max-width: 300px;
+  p {
+    margin-top: 0;
+  }
+}
 .center-content {
   text-align: center;
-  small {
-    margin-bottom: 2em;
+  strong {
     display: block;
   }
+}
+
+.golf-small {
+  margin-bottom: 2em;
+  display: block;
+  clear: both;
 }
 //schedules page grid
 @mixin grid-item-columns($columns) {
@@ -519,6 +549,7 @@ h1, h2, h3, h4, h5, h6, .card-header {
   position: relative;
   .fa {
     color: #d5252f;
+
   }
   .grid-item {
     @include transition (all 0.2s ease-in-out);
@@ -580,7 +611,22 @@ h1, h2, h3, h4, h5, h6, .card-header {
 }
 
 
-
+a.sidebar-register {
+  display: block;
+  border-top: 3px solid #d5252f;
+  margin: 1em -2em -1em;
+  text-align: center;
+  padding: 1em 0;
+  text-transform: uppercase;
+  background: #000;
+  
+  color: #d5252f;
+  @include transition(background 250ms ease, color 250ms ease);
+  &:hover {
+    color: #eee;
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
 
 
 // homepage
@@ -619,11 +665,14 @@ h1, h2, h3, h4, h5, h6, .card-header {
       list-style-type: initial;
       font-size: .9em;
     }
+    .fa {
+      color: #d5252f;
+    }
   }
 
   h2 {
     border-bottom: 3px solid rgb(213, 37, 47);
-    color: rgb(213, 37, 47);
+    color: #666;
     display: block;
     font-size: $icon-bullet-size / 2.5;
     margin: 0;
@@ -637,6 +686,9 @@ h1, h2, h3, h4, h5, h6, .card-header {
     line-height: $base-line-height;
     margin: 0;
 
+  }
+  a:hover {
+    color: rgb(213, 37, 47);
   }
 
   img {
@@ -981,6 +1033,7 @@ h1, h2, h3, h4, h5, h6, .card-header {
 
 .pull-left {
   float: left;
+  padding: 0 1em 1em 0;
 }
 .pull-right {
   @media (min-width: 48em) {
@@ -1117,5 +1170,10 @@ h1, h2, h3, h4, h5, h6, .card-header {
   }
 
 }
-
-
+.inner-container {
+  padding: 1em 0;
+  display: block;
+}
+.lb-image {
+  max-width: none;
+}

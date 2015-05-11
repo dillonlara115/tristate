@@ -53,7 +53,7 @@
 				<span class="lines">August 6-8, 2015 in Joplin, MO</span>
 				<span><img src="<?php bloginfo('url'); ?>/wp-content/uploads/downstream-logo-white.png" /></span>
 		    </div>
-		    <a href="" class="home-register">Register</a>
+		    <a href="index.php?page_id=13" class="home-register">Register</a>
 		</div>
 	</div>
     <?php } else { ?>
