@@ -17,10 +17,29 @@ get_header(); ?>
   
   <?php echo $post->post_content ?>
   <a href="uploads/2014_AttendeeForm_NEW.pdf" class="register-link" target="_blank" >Download Attendee Registration Form (PDF)</a>
+<!-- <form action="https://demo.globalgatewaye4.firstdata.com/payment" method="post"> 
+
+  <input name="x_login" value="WSP-TRI-S-xeuPSwBItw" type="hidden"> 
+
+  <input name="x_amount" value="1.23" type="hidden"> 
+
+  <input name="x_fp_sequence" value="123456" type="hidden"> 
+
+  <input name="x_fp_timestamp" value="1191600622" type="hidden"> 
+
+  <input name="x_fp_hash" value="4b04d15ccd9007658c2dadc679899ec4" type="hidden"> 
+
+  <input name="x_show_form" value="PAYMENT_FORM" type="hidden"> 
+
+  <input value="Checkout" type="submit"> 
+
+</form> -->
+
+
   <div id="main" class="registration-table-container">
     <br /><br />
     <div style="align:auto">
-      <form method="post">
+      <form action="<?php bloginfo('template_url'); ?>/Samplegge4payment.php" method="post">
         <type="hidden" input name="recipients" value="tristatesignexpo@gmail.com" />
         <input type="hidden" name="mode" value="PayOnly">
         <input type="hidden" name="txntype" value="sale">
@@ -105,7 +124,7 @@ get_header(); ?>
             <td colspan="3"><span>Show Price: <strong>FREE</strong></span><input name="PROD_TRADEONLY_0.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)">Tradeshow Tickets</td>
           </tr>
           <tr>
-            <td colspan="7" class="grand-total"><strong>GRAND TOTAL AMOUNT DUE: </strong><INPUT TYPE=TEXT NAME=chargetotal SIZE=10 onFocus="this.form.elements[0].focus()"></td>
+            <td colspan="7" class="grand-total"><strong>GRAND TOTAL AMOUNT DUE: </strong><INPUT TYPE=TEXT NAME=x_amount SIZE=10 onFocus="this.form.elements[0].focus()"></td>
           </tr>
 
         </table>
@@ -297,6 +316,13 @@ get_header(); ?>
             <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly10" value="checked"></td>
           </tr>
         </table>
+
+        Payment Amount $
+        <input type="submit" value="Pay Now">
+        
+        <script type='text/javascript'>document.myForm.submit();</script>
+        </form>
+
         <strong>CLICK PROCEED TO PAY & ENTER CREDIT CARD PAYMENT INFORMATION BELOW&nbsp;&nbsp;&nbsp;<input type="hidden" name="storename" value="1001262950"><INPUT type="button" value="PROCEED WITH PAYMENT" onclick="submitTwice(this.form)"></strong><br />
         <b>CLICK IF REGISTERING FOR TRADE SHOW ONLY(NO CC REQUIRED)&nbsp;&nbsp;</b>
           <INPUT type="button" value="TRADE SHOW ONLY" onclick="submitOnce(this.form)">
@@ -348,7 +374,7 @@ function CalculateTotal(frm) {
         }
 
     // Display the total rounded to two decimal places
-    frm.chargetotal.value = round_decimals(order_total, 2)
+    frm.x_amount.value = round_decimals(order_total, 2)
   }
 
   function round_decimals(original_number, decimals) {
