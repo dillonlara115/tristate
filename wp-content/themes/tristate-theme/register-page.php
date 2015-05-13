@@ -13,27 +13,10 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area entry-content register-page">
+<div id="primary" class="content-area register-page">
   
   <?php echo $post->post_content ?>
   <a href="uploads/2014_AttendeeForm_NEW.pdf" class="register-link" target="_blank" >Download Attendee Registration Form (PDF)</a>
-<!-- <form action="https://demo.globalgatewaye4.firstdata.com/payment" method="post"> 
-
-  <input name="x_login" value="WSP-TRI-S-xeuPSwBItw" type="hidden"> 
-
-  <input name="x_amount" value="1.23" type="hidden"> 
-
-  <input name="x_fp_sequence" value="123456" type="hidden"> 
-
-  <input name="x_fp_timestamp" value="1191600622" type="hidden"> 
-
-  <input name="x_fp_hash" value="4b04d15ccd9007658c2dadc679899ec4" type="hidden"> 
-
-  <input name="x_show_form" value="PAYMENT_FORM" type="hidden"> 
-
-  <input value="Checkout" type="submit"> 
-
-</form> -->
 
 
   <div id="main" class="registration-table-container">
@@ -70,43 +53,27 @@ get_header(); ?>
             <td colspan="2"><b>Phone:</b> <input type="tel" name="Phone" size="15" ></td>
             <td colspan="1"><b>Fax:</b> <input type="tel" name="Fax" size="15" ></td>
           </tr>
-          
-          <?php if (new DateTime() < new DateTime("2015-06-15 00:00:00")) { ?>
-            <tr class="header-row">
-              <th colspan="4">DISCOUNTED GENERAL REGISTRATION:<br /> (Prior to June 15)</th>
-              <th colspan="3" class="table-number-th">Enter #</th>
-            </tr>
-            <tr>
-                <td colspan="4" class="blank-td"></td>
-                <td colspan="3" data-th="Number of Attendees: " >
-                <span>Member: @ $75.00</span> <input class="member-count" name="PROD_Memattendee_75.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Attendees
-                <br/><span>Non-Member: @ $95.00</span> <input class="reg-count" name="PROD_attendee_95.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Attendees
-                </td>
-            </tr>
-          <?php } else { ?>
-            <tr class="header-row">
-              <th colspan="4">GENERAL REGISTRATION:<br /> (After June 15)</th>
-              <th colspan="3" class="table-number-th">Enter #</th>
-            </tr>
-            <tr>
-              <td colspan="4"class="blank-td"></td>
-              <td colspan="3" data-th="Number of Attendees: " >
-                <span>Member: @ $95.00</span><input name="PROD_Memattendee1_95.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Attendees<br />
-                <span>Non-Member: @ $115.00</span><input name="PROD_attendee1_115.00" type="text" min="0" size="5" onChange="CalculateTotal(this.form)"> Attendees
-              </td>
-            </tr>
-          <?php } ?>        
-          
+          <tr class="header-row">
+            <th colspan="4">GENERAL REGISTRATION:<br /></th>
+            <th colspan="3" class="table-number-th">Enter #</th>
+          </tr>
+          <tr>
+            <td colspan="4"class="blank-td"></td>
+            <td colspan="3" data-th="Number of Attendees: " >
+              <span>Member: @ $95.00</span><input class="member-count"  name="PROD_Memattendee1_95.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Attendees<br />
+              <span>Non-Member: @ $115.00</span><input class="reg-count" name="PROD_attendee1_115.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Attendees
+            </td>
+          </tr>      
           <tr>
             <th colspan="4">HALL OF FAME & SCHOLARSHIP AWARDS BANQUET</th>
             <th colspan="3" class="table-number-th">Enter #</th>
           </tr>
           <tr>
             <td colspan="4"  class="blank-td"></td>
-            <td colspan="3"><span>Banquet: @ $60.00</span> <input name="PROD_Banquet_60.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Banquet Tickets</td>
+            <td colspan="3"><span>Banquet: @ $75.00</span> <input name="PROD_Banquet_75.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Banquet Tickets</td>
           </tr>
           <tr>
-            <th colspan="4">GOLF TOURNAMENT - Limited to the first 124 entries</th>
+            <th colspan="4">GOLF TOURNAMENT - Limited to the first 144 entries</th>
             <th colspan="3" class="table-number-th">Enter #</th>
           </tr>
           <tr>
@@ -126,27 +93,25 @@ get_header(); ?>
           <tr>
             <td colspan="7" class="grand-total"><strong>GRAND TOTAL AMOUNT DUE: </strong><INPUT TYPE=TEXT NAME=x_amount SIZE=10 onFocus="this.form.elements[0].focus()"></td>
           </tr>
-
         </table>
         <table class="attendees-table-list" >
           <tr style="background: #525254;color:#fff;">
-            <td rowspan="4" class="attendees-name-header" colspan="2"><center><h4>Name of Attendees</h4><br /></center></td>
+            <td rowspan="3" class="attendees-name-header" colspan="2"><center><h4>Name of Attendees</h4><br /></center></td>
+            <td rowspan="3" class="attendees-name-header" colspan="2"><center><h4>Email Address</h4></center></td>
             <th style="background: #525254;color:#fff;text-align:center;" colspan="6">Check All That Apply For Each Attendee</th>
           </tr>
           <tr>
             <th rowspan="3" style="background: #525254;color:#fff;text-align:center;">General Registration & Trade Show<br /></th>
             <th rowspan="3" style="background: #525254;color:#fff;text-align:center;">Hall of Fame/ Scholarship Awards Banquet<br /></th>
             <th colspan="2" rowspan ="3" style="background: #525254;color:#fff;text-align:center;">Educational Seminars<br /></th>
-
             <th rowspan="3" style="background: #525254;color:#fff;text-align:center;">Golfers Handicap<br /></th>
-
             <th rowspan="3" style="background: #525254;color:#fff;text-align:center;">Trade Show Only</th>
           </tr>
           <tr> </tr>
           <tr> </tr>
-
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant1" placeholder="name of attendee"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration1" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet1" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
@@ -155,16 +120,14 @@ get_header(); ?>
                 <option value="One">Seminar 1</option>
                 <option value="Two">Seminar 2</option>
                 <option value="ThreeANDFour">Seminars 3&4</option>
-
               </select>
             </td>
-
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap1" size="5"></td>
-
             <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly1" value="checked"></td>
           </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant2" placeholder="name of attendee"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration2" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet2" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
@@ -173,16 +136,14 @@ get_header(); ?>
                 <option value="One">Seminar 1</option>
                 <option value="Two">Seminar 2</option>
                 <option value="ThreeANDFour">Seminars 3&4</option>
-
               </select>
             </td>
-
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap2" size="5"></td>
-
             <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly2" value="checked"></td>
           </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant3" placeholder="name of attendee"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration3" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet3" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
@@ -191,16 +152,14 @@ get_header(); ?>
                 <option value="One">Seminar 1</option>
                 <option value="Two">Seminar 2</option>
                 <option value="ThreeANDFour">Seminars 3&4</option>
-
               </select>
             </td>
-
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap3" size="5"></td>
-
             <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly3" value="checked"></td>
           </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant4" placeholder="name of attendee"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration4" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet4" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2"><select name="Seminars4a">
@@ -208,15 +167,14 @@ get_header(); ?>
               <option value="One">Seminar 1</option>
               <option value="Two">Seminar 2</option>
               <option value="ThreeANDFour">Seminars 3&4</option>
-
             </select>
           </td>
 
           <td data-th="Golfers Handicap: "><input type="text" name="Handicap4" size="5"></td>
-
           <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly4" value="checked"></td></tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant5" placeholder="name of attendee"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration5" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet5" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
@@ -225,15 +183,14 @@ get_header(); ?>
                 <option value="One">Seminar 1</option>
                 <option value="Two">Seminar 2</option>
                 <option value="ThreeANDFour">Seminars 3&4</option>
-
               </select>
             </td>
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap5" size="5"></td>
-
             <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly5" value="checked"></td>
           </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant6" placeholder="name of attendee"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration6" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet6" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2"><select name="Seminars6a">
@@ -241,15 +198,14 @@ get_header(); ?>
               <option value="One">Seminar 1</option>
               <option value="Two">Seminar 2</option>
               <option value="ThreeANDFour">Seminars 3&4</option>
-
             </select>
           </td>
           <td data-th="Golfers Handicap: "><input type="text" name="Handicap6" size="5"></td>
-
           <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly6" value="checked"></td>
         </tr>
         <tr>
           <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant7" placeholder="name of attendee"></td>
+          <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
           <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration7" value="checked"></td>
           <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet7" value="checked"></td>
           <td data-th="Educational Seminars: " colspan="2">
@@ -258,14 +214,13 @@ get_header(); ?>
               <option value="One">Seminar 1</option>
               <option value="Two">Seminar 2</option>
               <option value="ThreeANDFour">Seminars 3&4</option>
-
             </select></td>
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap7" size="5"></td>
-
             <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly7" value="checked"></td>
           </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant8" placeholder="name of attendee"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration8" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet8" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
@@ -278,11 +233,11 @@ get_header(); ?>
               </select>
             </td>
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap8" size="5"></td>
-
             <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly8" value="checked"></td>
           </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant9" placeholder="name of attendee"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration9" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet9" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
@@ -295,11 +250,11 @@ get_header(); ?>
               </select>
             </td>
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap9" size="5"></td>
-
             <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly9" value="checked"></td>
           </tr>
           <tr>
-            <td data-th="Name of Attendee: " colspan="2" style="border-style: solid;border-width: 1px;"><input type="text" name="registrant10" placeholder="name of attendee"></td>
+            <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant10" placeholder="name of attendee"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: " ><input type="checkbox" name="GeneralRegistration10" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet10" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
@@ -312,7 +267,6 @@ get_header(); ?>
               </select>
             </td>
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap10" size="5"></td>
-
             <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly10" value="checked"></td>
           </tr>
         </table>
@@ -322,20 +276,11 @@ get_header(); ?>
         
         <script type='text/javascript'>document.myForm.submit();</script>
         </form>
-
-        <strong>CLICK PROCEED TO PAY & ENTER CREDIT CARD PAYMENT INFORMATION BELOW&nbsp;&nbsp;&nbsp;<input type="hidden" name="storename" value="1001262950"><INPUT type="button" value="PROCEED WITH PAYMENT" onclick="submitTwice(this.form)"></strong><br />
-        <b>CLICK IF REGISTERING FOR TRADE SHOW ONLY(NO CC REQUIRED)&nbsp;&nbsp;</b>
-          <INPUT type="button" value="TRADE SHOW ONLY" onclick="submitOnce(this.form)">
-          </form>
-          <iframe name="ifr1" width="760px" height="400px" frameborder="0"></iframe>
-          <iframe name="ifr2" width="1px" height="1px" frameborder="0"></iframe>
-
+        <INPUT type="button" value="TRADE SHOW ONLY" onclick="submitOnce(this.form)">
+         
         </div>
         <div class="clear"></div>
       </div>
-
-
-
     </div><!-- #primary -->
     <script language="JavaScript" type="text/javascript">
       <!--
@@ -421,28 +366,5 @@ function CalculateTotal(frm) {
 
 //-->
 </script>
-</script>
-<script type="text/javascript">
-  function submitTwice(f){
-    f.action = 'formmail.php';
-    f.target='ifr2';
-    f.submit();
-    f.action = 'https://www.linkpointcendival.com/lpc/servlet/lppay';
-    f.target='ifr1';
-    f.submit();
-  }
-</script>
-</script>
-<script type="text/javascript">
-  function submitOnce(f){
-    f.action = 'formmail.php';
-    f.target='ifr2';
-    f.submit();
-    f.action = 'index.php/thank-you';
-    f.target='ifr1';
-    f.submit();
-  }
-</script>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

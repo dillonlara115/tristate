@@ -21,7 +21,7 @@ get_header(); ?>
         <img src="<?php bloginfo('url'); ?>/wp-content/uploads/tradeshow-hp-bucket.jpg">
         <strong>Premier Tradeshow</strong>  
         <ul>
-          <li>New! Expanded Tradeshow. Two exhibits halls with over 14,000 square feet of display space.</li>
+          <li>New! Expanded tradeshow in 18,000 square foot large pavillion</li>
           <li>Find the latest advancements in materials and sign technology.  </li>
           <li>Meet with the leading suppliers in the sign industry.</li>
         </ul>
@@ -43,8 +43,8 @@ get_header(); ?>
     <div class="bullet-content">
       <h2><i class="fa fa-users"></i> Networking</h2>
       <img src="<?php bloginfo('url'); ?>/wp-content/uploads/networking-hp-bucket.jpg">
-      <strong>Premier Educational Seminars</strong>
-      <p>Tradeshow, Seminars, Social and Recreational Activities.</p>
+      <strong>Tradeshow, Seminars, Social and Recreational Activities.</strong>
+      
       <ul>
         <li>Meet and talk with the suppliers and sign company attendees.</li>
         <li> Learn from others how they pursue new opportunities and use best </li>
