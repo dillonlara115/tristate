@@ -19,11 +19,15 @@
 	totalNumberOfAttendees = memberCount + regularCount
 
 	memberCountChange.on 'change', -> 
-		memberCount 
+		memberCount = memberCountChange.val()
+		regularCount = regularCountChange.val()
+		totalNumberOfAttendees = parseInt(memberCount) + parseInt(regularCount)
 		console.log(totalNumberOfAttendees)
 
 	regularCountChange.on 'change', ->
-		regularCount 
+		memberCount = memberCountChange.val()
+		regularCount = regularCountChange.val()
+		totalNumberOfAttendees = parseInt(memberCount) + parseInt(regularCount)
 		console.log(totalNumberOfAttendees)
 
 

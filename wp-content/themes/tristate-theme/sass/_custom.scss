@@ -468,7 +468,7 @@ h1, h2, h3, h4, h5, h6, .card-header {
 }
 .fa-grad:before {
   content: "";
-  background: url("http://maxtestdomain.com/tristatesignexpo/wp-content/uploads/grad-cap.png");
+  background: url("http://tristatesignexpo.com/wp-content/uploads/grad-cap.png");
   width: 29px;
   height: 21px;
   display: inline-block;
@@ -476,7 +476,7 @@ h1, h2, h3, h4, h5, h6, .card-header {
   background-size: contain;
 }
 .cover-image {
-  background: url("http://maxtestdomain.com/tristatesignexpo/wp-content/uploads/DownstreamCasinoPH2_02_ext-overall_night.jpg");
+  background: url("http://tristatesignexpo.com/wp-content/uploads/DownstreamCasinoPH2_02_ext-overall_night.jpg");
   background-color: #ccc;
   background-position-x: center;
   background-repeat: no-repeat;
@@ -1176,4 +1176,9 @@ a.sidebar-register {
 }
 .lb-image {
   max-width: none;
+}
+
+strong.or-style {
+  text-transform: uppercase;
+  margin: 0 1em;
 }

@@ -21,11 +21,15 @@
     regularCount = regularCountChange.val();
     totalNumberOfAttendees = memberCount + regularCount;
     memberCountChange.on('change', function() {
-      memberCount;
+      memberCount = memberCountChange.val();
+      regularCount = regularCountChange.val();
+      totalNumberOfAttendees = parseInt(memberCount) + parseInt(regularCount);
       return console.log(totalNumberOfAttendees);
     });
     regularCountChange.on('change', function() {
-      regularCount;
+      memberCount = memberCountChange.val();
+      regularCount = regularCountChange.val();
+      totalNumberOfAttendees = parseInt(memberCount) + parseInt(regularCount);
       return console.log(totalNumberOfAttendees);
     });
     $blip = $('.blip');

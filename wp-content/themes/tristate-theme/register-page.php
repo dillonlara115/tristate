@@ -22,8 +22,8 @@ get_header(); ?>
   <div id="main" class="registration-table-container">
     <br /><br />
     <div style="align:auto">
-      <form action="<?php bloginfo('template_url'); ?>/Samplegge4payment.php" method="post">
-        <type="hidden" input name="recipients" value="tristatesignexpo@gmail.com" />
+      <form  method="post">
+        <type="hidden" input name="recipients" value="exec.director@tristatesign.org" />
         <input type="hidden" name="mode" value="PayOnly">
         <input type="hidden" name="txntype" value="sale">
         <table class=" ticket-table">
@@ -60,8 +60,8 @@ get_header(); ?>
           <tr>
             <td colspan="4"class="blank-td"></td>
             <td colspan="3" data-th="Number of Attendees: " >
-              <span>Member: @ $95.00</span><input class="member-count"  name="PROD_Memattendee1_95.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Attendees<br />
-              <span>Non-Member: @ $115.00</span><input class="reg-count" name="PROD_attendee1_115.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)"> Attendees
+              <span>Member: @ $95.00</span><input class="member-count"  name="PROD_Memattendee1_95.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)" value="0"> Attendees<br />
+              <span>Non-Member: @ $115.00</span><input class="reg-count" name="PROD_attendee1_115.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)" value="0"> Attendees
             </td>
           </tr>      
           <tr>
@@ -91,7 +91,7 @@ get_header(); ?>
             <td colspan="3"><span>Show Price: <strong>FREE</strong></span><input name="PROD_TRADEONLY_0.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)">Tradeshow Tickets</td>
           </tr>
           <tr>
-            <td colspan="7" class="grand-total"><strong>GRAND TOTAL AMOUNT DUE: </strong><INPUT TYPE=TEXT NAME=x_amount SIZE=10 onFocus="this.form.elements[0].focus()"></td>
+            <td colspan="7" class="grand-total"><strong>GRAND TOTAL AMOUNT DUE: </strong><INPUT TYPE=TEXT NAME=x_amount SIZE=10 onFocus="this.form.elements[0].focus()" disabled></td>
           </tr>
         </table>
         <table class="attendees-table-list" >
@@ -111,15 +111,21 @@ get_header(); ?>
           <tr> </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant1" placeholder="name of attendee"></td>
-            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email1" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration1" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet1" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
+                <strong>9:00 seminar</strong>
               <select name="Seminars1a">
                 <option value="0">Select One</option>
-                <option value="One">Seminar 1</option>
-                <option value="Two">Seminar 2</option>
-                <option value="ThreeANDFour">Seminars 3&4</option>
+                <option value="one">Surviving an Onsite, OSHA Inspection</option>
+                <option value="two">A Little Birdy Told Me</option>
+              </select>
+               <strong>10:00 seminar</strong>
+              <select name="Seminars1b">
+                <option value="0">Select One</option>
+                <option value="three">UL Code Compliant LED Retrofits for Signs</option>
+                <option value="four">Communicating Trust and Clear Goals within Your Company</option>
               </select>
             </td>
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap1" size="5"></td>
@@ -127,15 +133,21 @@ get_header(); ?>
           </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant2" placeholder="name of attendee"></td>
-            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email2" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration2" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet2" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
-              <select name="Seminars2a">>
+                <strong>9:00 seminar</strong>
+              <select name="Seminars2a">
                 <option value="0">Select One</option>
-                <option value="One">Seminar 1</option>
-                <option value="Two">Seminar 2</option>
-                <option value="ThreeANDFour">Seminars 3&4</option>
+                <option value="one">Surviving an Onsite, OSHA Inspection</option>
+                <option value="two">A Little Birdy Told Me</option>
+              </select>
+               <strong>10:00 seminar</strong>
+              <select name="Seminars2b">
+                <option value="0">Select One</option>
+                <option value="three">UL Code Compliant LED Retrofits for Signs</option>
+                <option value="four">Communicating Trust and Clear Goals within Your Company</option>
               </select>
             </td>
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap2" size="5"></td>
@@ -143,15 +155,21 @@ get_header(); ?>
           </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant3" placeholder="name of attendee"></td>
-            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email3" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration3" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet3" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
+                <strong>9:00 seminar</strong>
               <select name="Seminars3a">
                 <option value="0">Select One</option>
-                <option value="One">Seminar 1</option>
-                <option value="Two">Seminar 2</option>
-                <option value="ThreeANDFour">Seminars 3&4</option>
+                <option value="one">Surviving an Onsite, OSHA Inspection</option>
+                <option value="two">A Little Birdy Told Me</option>
+              </select>
+               <strong>10:00 seminar</strong>
+              <select name="Seminars3b">
+                <option value="0">Select One</option>
+                <option value="three">UL Code Compliant LED Retrofits for Signs</option>
+                <option value="four">Communicating Trust and Clear Goals within Your Company</option>
               </select>
             </td>
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap3" size="5"></td>
@@ -159,30 +177,43 @@ get_header(); ?>
           </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant4" placeholder="name of attendee"></td>
-            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email4" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration4" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet4" value="checked"></td>
-            <td data-th="Educational Seminars: " colspan="2"><select name="Seminars4a">
-              <option value="0">Select One</option>
-              <option value="One">Seminar 1</option>
-              <option value="Two">Seminar 2</option>
-              <option value="ThreeANDFour">Seminars 3&4</option>
-            </select>
+            <td data-th="Educational Seminars: " colspan="2">
+              <strong>9:00 seminar</strong>
+              <select name="Seminars4a">
+                <option value="0">Select One</option>
+                <option value="one">Surviving an Onsite, OSHA Inspection</option>
+                <option value="two">A Little Birdy Told Me</option>
+              </select>
+               <strong>10:00 seminar</strong>
+              <select name="Seminars4b">
+                <option value="0">Select One</option>
+                <option value="three">UL Code Compliant LED Retrofits for Signs</option>
+                <option value="four">Communicating Trust and Clear Goals within Your Company</option>
+              </select>
           </td>
 
           <td data-th="Golfers Handicap: "><input type="text" name="Handicap4" size="5"></td>
           <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly4" value="checked"></td></tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant5" placeholder="name of attendee"></td>
-            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email5" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration5" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet5" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
+                <strong>9:00 seminar</strong>
               <select name="Seminars5a">
                 <option value="0">Select One</option>
-                <option value="One">Seminar 1</option>
-                <option value="Two">Seminar 2</option>
-                <option value="ThreeANDFour">Seminars 3&4</option>
+                <option value="one">Surviving an Onsite, OSHA Inspection</option>
+                <option value="two">A Little Birdy Told Me</option>
+              </select>
+               <strong>10:00 seminar</strong>
+              <select name="Seminars5b">
+                <option value="0">Select One</option>
+                <option value="three">UL Code Compliant LED Retrofits for Signs</option>
+                <option value="four">Communicating Trust and Clear Goals within Your Company</option>
               </select>
             </td>
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap5" size="5"></td>
@@ -190,15 +221,22 @@ get_header(); ?>
           </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant6" placeholder="name of attendee"></td>
-            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email6" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration6" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet6" value="checked"></td>
-            <td data-th="Educational Seminars: " colspan="2"><select name="Seminars6a">
-              <option value="0">Select One</option>
-              <option value="One">Seminar 1</option>
-              <option value="Two">Seminar 2</option>
-              <option value="ThreeANDFour">Seminars 3&4</option>
-            </select>
+            <td data-th="Educational Seminars: " colspan="2">
+              <strong>9:00 seminar</strong>
+              <select name="Seminars6a">
+                <option value="0">Select One</option>
+                <option value="one">Surviving an Onsite, OSHA Inspection</option>
+                <option value="two">A Little Birdy Told Me</option>
+              </select>
+               <strong>10:00 seminar</strong>
+              <select name="Seminars6b">
+                <option value="0">Select One</option>
+                <option value="three">UL Code Compliant LED Retrofits for Signs</option>
+                <option value="four">Communicating Trust and Clear Goals within Your Company</option>
+              </select>
           </td>
           <td data-th="Golfers Handicap: "><input type="text" name="Handicap6" size="5"></td>
           <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly6" value="checked"></td>
@@ -209,27 +247,39 @@ get_header(); ?>
           <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration7" value="checked"></td>
           <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet7" value="checked"></td>
           <td data-th="Educational Seminars: " colspan="2">
-            <select name="Seminars7a">
-              <option value="0">Select One</option>
-              <option value="One">Seminar 1</option>
-              <option value="Two">Seminar 2</option>
-              <option value="ThreeANDFour">Seminars 3&4</option>
-            </select></td>
+              <strong>9:00 seminar</strong>
+              <select name="Seminars7a">
+                <option value="0">Select One</option>
+                <option value="one">Surviving an Onsite, OSHA Inspection</option>
+                <option value="two">A Little Birdy Told Me</option>
+              </select>
+               <strong>10:00 seminar</strong>
+              <select name="Seminars7b">
+                <option value="0">Select One</option>
+                <option value="three">UL Code Compliant LED Retrofits for Signs</option>
+                <option value="four">Communicating Trust and Clear Goals within Your Company</option>
+              </select>
+          </td>
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap7" size="5"></td>
             <td data-th="Trade Show Only: "><input type="checkbox" name="TradeOnly7" value="checked"></td>
           </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant8" placeholder="name of attendee"></td>
-            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email8" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration8" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet8" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
+              <strong>9:00 seminar</strong>
               <select name="Seminars8a">
                 <option value="0">Select One</option>
-                <option value="One">Seminar 1</option>
-                <option value="Two">Seminar 2</option>
-                <option value="ThreeANDFour">Seminars 3&4</option>
-
+                <option value="one">Surviving an Onsite, OSHA Inspection</option>
+                <option value="two">A Little Birdy Told Me</option>
+              </select>
+               <strong>10:00 seminar</strong>
+              <select name="Seminars8b">
+                <option value="0">Select One</option>
+                <option value="three">UL Code Compliant LED Retrofits for Signs</option>
+                <option value="four">Communicating Trust and Clear Goals within Your Company</option>
               </select>
             </td>
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap8" size="5"></td>
@@ -237,16 +287,21 @@ get_header(); ?>
           </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant9" placeholder="name of attendee"></td>
-            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email9" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: "><input type="checkbox" name="GeneralRegistration9" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet9" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
+              <strong>9:00 seminar</strong>
               <select name="Seminars9a">
                 <option value="0">Select One</option>
-                <option value="One">Seminar 1</option>
-                <option value="Two">Seminar 2</option>
-                <option value="ThreeANDFour">Seminars 3&4</option>
-
+                <option value="one">Surviving an Onsite, OSHA Inspection</option>
+                <option value="two">A Little Birdy Told Me</option>
+              </select>
+               <strong>10:00 seminar</strong>
+              <select name="Seminars9b">
+                <option value="0">Select One</option>
+                <option value="three">UL Code Compliant LED Retrofits for Signs</option>
+                <option value="four">Communicating Trust and Clear Goals within Your Company</option>
               </select>
             </td>
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap9" size="5"></td>
@@ -254,16 +309,21 @@ get_header(); ?>
           </tr>
           <tr>
             <td data-th="Name of Attendee: " colspan="2"><input type="text" name="registrant10" placeholder="name of attendee"></td>
-            <td data-th="Email Address: " colspan="2"><input type="email" name="email7" placeholder="name@email.com"></td>
+            <td data-th="Email Address: " colspan="2"><input type="email" name="email10" placeholder="name@email.com"></td>
             <td data-th="General Registration & Trade Show: " ><input type="checkbox" name="GeneralRegistration10" value="checked"></td>
             <td data-th="Hall of Fame/Scholarship Awards Banquet: "><input type="checkbox" name="Banquet10" value="checked"></td>
             <td data-th="Educational Seminars: " colspan="2">
+                <strong>9:00 seminar</strong>
               <select name="Seminars10a">
                 <option value="0">Select One</option>
-                <option value="One">Seminar 1</option>
-                <option value="Two">Seminar 2</option>
-                <option value="ThreeANDFour">Seminars 3&4</option>
-
+                <option value="one">Surviving an Onsite, OSHA Inspection</option>
+                <option value="two">A Little Birdy Told Me</option>
+              </select>
+               <strong>10:00 seminar</strong>
+              <select name="Seminars10b">
+                <option value="0">Select One</option>
+                <option value="three">UL Code Compliant LED Retrofits for Signs</option>
+                <option value="four">Communicating Trust and Clear Goals within Your Company</option>
               </select>
             </td>
             <td data-th="Golfers Handicap: "><input type="text" name="Handicap10" size="5"></td>
@@ -271,14 +331,18 @@ get_header(); ?>
           </tr>
         </table>
 
-        Payment Amount $
-        <input type="submit" value="Pay Now">
+        <input type="submit" value="PAY NOW" class="form-submit" >
         
-        <script type='text/javascript'>document.myForm.submit();</script>
+     
         </form>
-        <INPUT type="button" value="TRADE SHOW ONLY" onclick="submitOnce(this.form)">
+        <strong class="or-style"> Or </strong>
+        <INPUT type="button" value="TRADE SHOW ONLY" class="trade-only">
          
         </div>
+        <div style="visibility:hidden"> 
+          <iframe name="ifr1" width="20" height="20"></iframe> 
+          <iframe name="ifr2" width="20" height="20"></iframe> 
+        </div>  
         <div class="clear"></div>
       </div>
     </div><!-- #primary -->
@@ -365,6 +429,30 @@ function CalculateTotal(frm) {
     }
 
 //-->
+</script>
+<script type="text/javascript">
+jQuery('.form-submit').on('click', function(e){
+  e.preventDefault();
+  sendMail(this.form);
+  submitTwice(this.form);
+  
+});
+jQuery('.trade-only').on('click', function(e){
+  sendMail(this.form);
+  jQuery('<strong>Thank you for registerting for the trade show</strong>').insertAfter(this);
+});
+  function submitTwice(f){
+    f.action = 'http://tristatesignexpo.com/wp-content/themes/tristate-theme/payment.php';
+    f.target = '_blank';
+    f.submit();
+    
+  };
+  function sendMail(f){
+    f.action = 'http://tristatesignexpo.com/wp-content/themes/tristate-theme/formmail.php';
+    f.target='ifr1';
+    f.submit();
+    
+  }
 </script>
 
 <?php get_footer(); ?>
