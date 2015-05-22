@@ -324,6 +324,9 @@ textarea {
   padding-left: 3px;
   width: 100%; }
 
+.gform_wrapper input.ginput_quantity {
+  display: inline-block !important; }
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/

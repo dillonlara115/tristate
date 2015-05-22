@@ -91,7 +91,7 @@ get_header(); ?>
             <td colspan="3"><span>Show Price: <strong>FREE</strong></span><input name="PROD_TRADEONLY_0.00" type="number" min="0" size="5" onChange="CalculateTotal(this.form)">Tradeshow Tickets</td>
           </tr>
           <tr>
-            <td colspan="7" class="grand-total"><strong>GRAND TOTAL AMOUNT DUE: </strong><INPUT TYPE=TEXT NAME=x_amount SIZE=10 onFocus="this.form.elements[0].focus()" disabled></td>
+            <td colspan="7" class="grand-total"><strong>GRAND TOTAL AMOUNT DUE: </strong><INPUT TYPE="TEXT" NAME="x_amount" SIZE="10" onFocus="this.form.elements[0].focus()"></td>
           </tr>
         </table>
         <table class="attendees-table-list" >
