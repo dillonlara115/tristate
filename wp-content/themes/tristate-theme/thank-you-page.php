@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying all pages.
- *Template Name: new register page template
+ *Template Name: Thank You Page
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress consdivuct of pages
@@ -15,13 +15,10 @@ get_header(); ?>
 
 <div id="primary" class="content-area register-page">
   
-  <?php echo $post->post_content ?>
+	<?php echo $post->post_content ?>
+	<h2>Thank You!</h2>
+	<p>Thank you for registering for the 2015 Tri-State Sign Expo Tradeshow.  Please check your email for a confirmation message.</p>
   
-  <a href="uploads/2014_AttendeeForm_NEW.pdf" class="register-link" target="_blank" >Download Attendee Registration Form (PDF)</a>
-
-
-   <?php gravity_form( 2, $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false, $tabindex ); ?>
-
 </div>
 
 <?php get_footer(); ?>

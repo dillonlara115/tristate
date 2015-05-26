@@ -10,26 +10,12 @@
 	$(window).on 'resize', ->
 	  if $('body').hasClass('sidr-open') and $(window).width() >= 768
 	  	$.sidr 'close'
+	  	
+	totalNumberOfAttendees = $('.attendee-number option:selected').text()
 		
-
-	memberCountChange = $('.member-count')
-	regularCountChange = $('.reg-count')
-	memberCount = memberCountChange.val()
-	regularCount = regularCountChange.val()
-	totalNumberOfAttendees = memberCount + regularCount
-
-	memberCountChange.on 'change', -> 
-		memberCount = memberCountChange.val()
-		regularCount = regularCountChange.val()
-		totalNumberOfAttendees = parseInt(memberCount) + parseInt(regularCount)
+	$('.attendee-number').on 'change', ->
+		totalNumberOfAttendees
 		console.log(totalNumberOfAttendees)
-
-	regularCountChange.on 'change', ->
-		memberCount = memberCountChange.val()
-		regularCount = regularCountChange.val()
-		totalNumberOfAttendees = parseInt(memberCount) + parseInt(regularCount)
-		console.log(totalNumberOfAttendees)
-
 
 
 

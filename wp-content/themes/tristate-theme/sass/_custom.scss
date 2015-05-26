@@ -1182,3 +1182,13 @@ strong.or-style {
   text-transform: uppercase;
   margin: 0 1em;
 }
+
+//register form settings
+
+.register-form {
+  li:nth-child(n+24) {
+    display: none;
+  }
+}
+
+
