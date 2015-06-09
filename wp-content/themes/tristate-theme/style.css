@@ -1590,6 +1590,18 @@ a.sidebar-register {
     .card .card-copy strong {
       color: #d5252f; }
 
+.default-list {
+  list-style-type: disc; }
+
+.default-ordered-list {
+  list-style-type: octal; }
+
+div#gform_confirmation_wrapper_4 {
+  margin-top: 1em;
+  font-weight: bold;
+  color: tomato;
+  font-size: 1.5em; }
+
 .pull-left {
   float: left;
   padding: 0 1em 1em 0; }

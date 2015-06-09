@@ -1029,7 +1029,20 @@ a.sidebar-register {
 
 }
 
+.default-list {
+  list-style-type: disc;
+}
 
+.default-ordered-list {
+  list-style-type: octal;
+}
+
+div#gform_confirmation_wrapper_4 {
+  margin-top: 1em;
+  font-weight: bold;
+  color: tomato;
+  font-size: 1.5em;
+}
 
 .pull-left {
   float: left;
